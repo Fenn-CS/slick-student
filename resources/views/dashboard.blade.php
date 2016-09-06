@@ -186,7 +186,7 @@
 
                 <p>
                   {{Auth::user()->name}}
-                  <small>Teacher @if(Auth::user()->hasRole('Student')) Hello @endif</small>
+                  <small></small>
                 </p>
               </li>
              
@@ -242,7 +242,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a ><i class="fa fa-circle-o"></i>Add</a></li>
+            <li class="active"><a id="form-addstudent"><i class="fa fa-circle-o"></i>Add</a></li>
             <li><a ><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>

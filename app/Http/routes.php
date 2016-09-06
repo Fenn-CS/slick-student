@@ -72,3 +72,14 @@ Route::get('/create/roles-permissions', function()
 
     return 'All done.';
 });
+
+
+
+/*
+ *Routes to return views
+ */
+Route::get('/views/addstudent', function(){
+
+	return ['title'=>'<h1>Register New Student <small>Control Panel</small><h1>','content'=>view('pages.addstudent')->render()];
+
+});

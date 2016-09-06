@@ -38,6 +38,10 @@
    
     @yield('content')
 
+    <!--Resources for JS-->
+    <input type="hidden" value="{{url('/')}}" id="baseUrl">
+     <input type="hidden" value="{{Session::token()}}" id="token">
+
     <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -75,5 +79,11 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<!-- LoadViews for loading of ajax views -->
+<script src="dist/js/load.views.js"></script>
+<!--Input Mask -->
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
 </body>
 </html>
