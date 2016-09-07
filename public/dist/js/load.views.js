@@ -40,6 +40,34 @@ $('body').on('click','#form-addteacher', function(event){
     getView(url);
 
 });
+$('body').on('click','#form-addscoresprompt', function(event){
+	event.preventDefault();
+	url = base+'/views/addscoresprompt';
+    getView(url);
+
+});
+$('body').on('click','#form-viewscoresprompt', function(event){
+	event.preventDefault();
+	url = base+'/views/viewscoresprompt';
+    getView(url);
+
+});
+
+//supposed to be a post
+$('body').on('click','#form-addscores', function(event){
+	event.preventDefault();
+	url = base+'/views/addscores';
+    getView(url);
+
+});
+//supposed to be a post
+$('body').on('click','#form-viewscores', function(event){
+	event.preventDefault();
+	url = base+'/views/getscores';
+    getView(url);
+
+});
+
 
 $('body').on('click','#form-registercourses', function(event){
 	event.preventDefault();

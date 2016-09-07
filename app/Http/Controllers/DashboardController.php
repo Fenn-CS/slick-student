@@ -46,4 +46,9 @@ return ['title'=>'<h1>View Classes <small>Control Panel</small><h1>','content'=>
 return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=>view('pages.viewteachers')->render()];       
 
     }
+    public function getScoresView()
+    {
+return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('pages.viewscores')->render()];       
+
+    }
 }

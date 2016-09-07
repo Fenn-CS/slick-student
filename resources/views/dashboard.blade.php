@@ -234,9 +234,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a ><i class="fa fa-circle-o"></i>Add Scores</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>View Scores</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>General</a></li>
+            <li><a id="form-addscoresprompt"><i class="fa fa-circle-o"></i>Add Scores</a></li>
+            <li><a id="form-viewscoresprompt"><i class="fa fa-circle-o"></i>View Scores</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>My Results</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Transcripts</a></li>
           </ul>
         </li>
@@ -251,6 +251,23 @@
             <li><a ><i class="fa fa-circle-o"></i>Add Fee</a></li>
             <li><a ><i class="fa fa-circle-o"></i>View Statistics</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Pay</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-stop"></i> <span>Restrictions</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+          <li><a ><i class="fa fa-circle-o"></i>Publications</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Course Registration</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Mark Registration</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Payments</a></li>
+      
+        
           </ul>
         </li>
         
