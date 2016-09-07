@@ -81,5 +81,21 @@ Route::get('/create/roles-permissions', function()
 Route::get('/views/addstudent', function(){
 
 	return ['title'=>'<h1>Register New Student <small>Control Panel</small><h1>','content'=>view('pages.addstudent')->render()];
-
 });
+
+
+Route::get('/views/addcourse', function(){
+	return ['title'=>'<h1>Register New Course <small>Control Panel</small><h1>','content'=>view('pages.addcourse')->render()];
+});
+Route::get('/views/assigncourse', function(){
+	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse')->render()];
+});
+
+Route::get('/views/getstudents', function(){
+return ['title'=>'<h1>Student List <small>Control Panel</small><h1>','content'=>view('pages.viewstudents')->render()];
+});
+
+Route::get('/views/getcourses', function(){
+return ['title'=>'<h1>Course List <small>Control Panel</small><h1>','content'=>view('pages.viewcourses')->render()];
+});
+

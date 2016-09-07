@@ -243,7 +243,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a id="form-addstudent"><i class="fa fa-circle-o"></i>Add</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>View</a></li>
+            <li><a  id="form-viewstudents"><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -255,10 +255,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a ><i class="fa fa-circle-o"></i>Add</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>View</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>Assign</a></li>
-            <li><a ><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+            <li><a id="form-addcourse"><i class="fa fa-circle-o"></i>Add</a></li>
+            <li><a id="form-viewcourses"><i class="fa fa-circle-o"></i>View</a></li>
+            <li><a id="form-assigncourse"><i class="fa fa-circle-o"></i>Assign</a></li>
+            <li><a id="form-registercoures"><i class="fa fa-circle-o"></i>Registrations</a></li>
           </ul>
         </li>
         <li class="treeview">

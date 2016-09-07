@@ -33,6 +33,8 @@
   <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+  <!--Custom slicl CSS -->
+  <link rel="stylesheet" href="{{asset('dist/css/slick.css')}}">
 </head>
 <body class="hold-transition skin-red sidebar-mini">
    

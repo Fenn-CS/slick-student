@@ -8,6 +8,34 @@ $('body').on('click','#form-addstudent', function(event){
     getView(url);
 
 });
+$('body').on('click','#form-addcourse', function(event){
+	event.preventDefault();
+	url = base+'/views/addcourse';
+    getView(url);
+
+});
+$('body').on('click','#form-assigncourse', function(event){
+	event.preventDefault();
+	url = base+'/views/assigncourse';
+    getView(url);
+
+});
+
+
+$('body').on('click','#form-viewstudents', function(event){
+	event.preventDefault();
+	url = base+'/views/getstudents';
+    getView(url);
+
+});
+
+
+$('body').on('click','#form-viewcourses', function(event){
+	event.preventDefault();
+	url = base+'/views/getcourses';
+    getView(url);
+
+});
 
 
 

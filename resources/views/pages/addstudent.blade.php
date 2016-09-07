@@ -1,6 +1,6 @@
 <div class="col-md-12">
           <!-- general form elements -->
-          <div class="box box-primary">
+          <div class="box box-danger">
             <div class="box-header with-border">
               <h3 class="box-title">Student Registration</h3>
             </div>
@@ -91,7 +91,7 @@
                 
               
                 <div class="box-footer col-md-12">
-                <button type="submit" class="btn btn-lg btn-primary" style="float:right;">Submit</button>
+                <button type="submit" class="btn btn-lg btn-slick" style="float:right;">Submit</button>
               </div>
               </div>
               <!-- /.box-body -->
