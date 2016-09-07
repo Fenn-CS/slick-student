@@ -91,6 +91,10 @@ Route::get('/views/assigncourse', function(){
 	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse')->render()];
 });
 
+Route::get('/views/registercourses', function(){
+	return ['title'=>'<h1>Course Registration <small>Control Panel</small><h1>','content'=>view('pages.registercourses')->render()];
+});
+
 Route::get('/views/getstudents', function(){
 return ['title'=>'<h1>Student List <small>Control Panel</small><h1>','content'=>view('pages.viewstudents')->render()];
 });

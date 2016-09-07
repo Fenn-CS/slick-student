@@ -20,6 +20,12 @@ $('body').on('click','#form-assigncourse', function(event){
     getView(url);
 
 });
+$('body').on('click','#form-registercourses', function(event){
+	event.preventDefault();
+	url = base+'/views/registercourses';
+    getView(url);
+
+});
 
 
 $('body').on('click','#form-viewstudents', function(event){

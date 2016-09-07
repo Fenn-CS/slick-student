@@ -17,6 +17,15 @@
                   <input type="text" class="form-control" id="title" placeholder="MATHEMATICS 1" name="title">
                 </div>
                 <div class="form-group">
+                  <label >Department</label>
+                  <select class="form-control" name="creditvalue">
+                  <option>ELECTRICAL</option>
+                   <option>COMPUTER</option>
+                    <option>TWCET</option>
+              
+                  </select>
+                </div>
+                <div class="form-group">
                   <label >Credit Value</label>
                   <select class="form-control" name="creditvalue">
                   <option>1</option>
