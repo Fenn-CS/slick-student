@@ -33,6 +33,14 @@ $('body').on('click','#form-addclass', function(event){
     getView(url);
 
 });
+
+$('body').on('click','#form-addteacher', function(event){
+	event.preventDefault();
+	url = base+'/views/addteacher';
+    getView(url);
+
+});
+
 $('body').on('click','#form-registercourses', function(event){
 	event.preventDefault();
 	url = base+'/views/registercourses';
@@ -68,6 +76,14 @@ $('body').on('click','#form-viewclasses', function(event){
     getView(url);
 
 });
+
+$('body').on('click','#form-viewteachers', function(event){
+	event.preventDefault();
+	url = base+'/views/getteachers';
+    getView(url);
+
+});
+
 
 
 
