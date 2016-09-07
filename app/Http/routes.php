@@ -91,6 +91,13 @@ Route::get('/views/assigncourse', function(){
 	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse')->render()];
 });
 
+Route::get('/views/addclass', function(){
+	return ['title'=>'<h1>Add Class<small>Control Panel</small><h1>','content'=>view('pages.addclass')->render()];
+});
+
+Route::get('/views/adddepartment', function(){
+	return ['title'=>'<h1>Add Departments <small>Control Panel</small><h1>','content'=>view('pages.adddepartment')->render()];
+});
 Route::get('/views/registercourses', function(){
 	return ['title'=>'<h1>Course Registration <small>Control Panel</small><h1>','content'=>view('pages.registercourses')->render()];
 });
@@ -101,5 +108,12 @@ return ['title'=>'<h1>Student List <small>Control Panel</small><h1>','content'=>
 
 Route::get('/views/getcourses', function(){
 return ['title'=>'<h1>Course List <small>Control Panel</small><h1>','content'=>view('pages.viewcourses')->render()];
+});
+
+Route::get('/views/getdepartments', function(){
+	return ['title'=>'<h1>View Departments <small>Control Panel</small><h1>','content'=>view('pages.viewdepartments')->render()];
+});
+Route::get('/views/getclasses', function(){
+	return ['title'=>'<h1>View Classes <small>Control Panel</small><h1>','content'=>view('pages.viewclasses')->render()];
 });
 

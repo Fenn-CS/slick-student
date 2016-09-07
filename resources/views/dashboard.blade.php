@@ -270,8 +270,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>Add</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>View</a></li>
+            <li><a id="form-adddepartment"><i class="fa fa-circle-o"></i>Add</a></li>
+            <li><a id="form-viewdepartments"><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -283,8 +283,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i>Add</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i>View</a></li>
+            <li><a id="form-addclass"><i class="fa fa-circle-o"></i>Add</a></li>
+            <li><a id="form-viewclasses"><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -311,6 +311,19 @@
             <li><a ><i class="fa fa-circle-o"></i>View Scores</a></li>
             <li><a ><i class="fa fa-circle-o"></i>General</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Transcripts</a></li>
+          </ul>
+        </li>
+          <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>Fees</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a ><i class="fa fa-circle-o"></i>Add Fee</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>View Statistics</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Pay</a></li>
           </ul>
         </li>
         

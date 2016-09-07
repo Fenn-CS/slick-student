@@ -20,6 +20,19 @@ $('body').on('click','#form-assigncourse', function(event){
     getView(url);
 
 });
+
+$('body').on('click','#form-adddepartment', function(event){
+	event.preventDefault();
+	url = base+'/views/adddepartment';
+    getView(url);
+
+});
+$('body').on('click','#form-addclass', function(event){
+	event.preventDefault();
+	url = base+'/views/addclass';
+    getView(url);
+
+});
 $('body').on('click','#form-registercourses', function(event){
 	event.preventDefault();
 	url = base+'/views/registercourses';
@@ -39,6 +52,19 @@ $('body').on('click','#form-viewstudents', function(event){
 $('body').on('click','#form-viewcourses', function(event){
 	event.preventDefault();
 	url = base+'/views/getcourses';
+    getView(url);
+
+});
+$('body').on('click','#form-viewdepartments', function(event){
+	event.preventDefault();
+	url = base+'/views/getdepartments';
+    getView(url);
+
+});
+
+$('body').on('click','#form-viewclasses', function(event){
+	event.preventDefault();
+	url = base+'/views/getclasses';
     getView(url);
 
 });
