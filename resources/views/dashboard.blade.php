@@ -161,6 +161,18 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
+         <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Info</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a id=""><i class="fa fa-circle-o"></i>My Info</a></li>
+            <li><a  id="form-viewstudents"><i class="fa fa-circle-o"></i>Status</a></li>
+          </ul>
+        </li>
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Students</span>
@@ -267,6 +279,20 @@
             <li><a ><i class="fa fa-circle-o"></i>Mark Registration</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Payments</a></li>
       
+        
+          </ul>
+        </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-folder"></i> <span>Defaults</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a ><i class="fa fa-circle-o"></i>Student Numbering System</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Teacher Numbering System </a></li>
+
         
           </ul>
         </li>

@@ -49,6 +49,11 @@
             </div>
             <div class="box-body">
               <!-- the events -->
+             <select class="form-control" name="creditvalue">
+                  <option>Level 200</option>
+                   <option>Level 300</option>
+                    <option>Level 400</option>
+                  </select>
               <div id="external-events">
                 <div class="external-event bg-green">ENG101</div>
                 <div class="external-event bg-yellow">EEC093</div>

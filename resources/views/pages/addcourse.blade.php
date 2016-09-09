@@ -26,6 +26,15 @@
                   </select>
                 </div>
                 <div class="form-group">
+                  <label >Level</label>
+                  <select class="form-control" name="creditvalue">
+                  <option>Level 200</option>
+                   <option>Level 300</option>
+                    <option>Level 400</option>
+                  
+                  </select>
+                </div>
+                <div class="form-group">
                   <label >Credit Value</label>
                   <select class="form-control" name="creditvalue">
                   <option>1</option>

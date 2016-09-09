@@ -9,9 +9,15 @@
             <form role="form">
               <div class="box-body">
               <div class="col-md-4">
-               <div class="form-group">
+               <div class="form-group col-md-6">
                 <label for="matricule">Matricule Number</label>
                 <input type="text" class="form-control" name="matricule" placeholder="CT15HNDA15">
+
+              </div>
+               <div class="form-group col-md-6">
+                <label for="automatricule">Auto Generated</label>
+                <input type="text" class="form-control" name="automatricule" placeholder="CT16HNDA11" disabled>
+                
               </div>
               <div class="form-group">
                 <label for="nid">NID/Passport No</label>
@@ -54,6 +60,7 @@
               <option>Female</option>
                 
               </select>
+              </div>
                <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
@@ -71,11 +78,11 @@
               </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" disabled>
                 </div>
             
               </div>
-            </div>
+            
             
               <div class="col-md-5">
               <div class="row">
@@ -87,18 +94,25 @@
                   
                 </div>
                 <div>
-               
+                </div>
+               <div class="form-group">
+               <label for="program">Admission Year</label>
+              <select name="program" id="sex" class="form-control">
+              <option>2015/2016</option>
+              <option>2016/2017</option>
+              <option>2017/2018</option>
                 
-              
-                <div class="box-footer col-md-12">
-                <button type="submit" class="btn btn-lg btn-slick" style="float:right;">Submit</button>
+            </select>
+               </div>
+                <div class="box-footer">
+                <button type="submit" class="btn btn-lg btn-slick">Submit</button>
               </div>
               </div>
               <!-- /.box-body -->
 
              
-              </div>
-
+          
+             </div>
             </form>
           </div>
           <!-- /.box -->
