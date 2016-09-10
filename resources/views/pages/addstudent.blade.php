@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form id="form-register-student">
               <div class="box-body">
               <div class="col-md-4">
                <div class="form-group col-md-6">
@@ -16,7 +16,7 @@
               </div>
                <div class="form-group col-md-6">
                 <label for="automatricule">Auto Generated</label>
-                <input type="text" class="form-control" name="automatricule" placeholder="CT16HNDA11" disabled>
+                <input type="text" class="form-control" name="automatricule" placeholder="CT16HNDA11" readonly>
                 
               </div>
               <div class="form-group">
@@ -62,8 +62,8 @@
               </select>
               </div>
                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                 </div>
                  <div class="form-group">
                 <label>Phone Number</label>
@@ -72,13 +72,13 @@
                   <div class="input-group-addon">
                     <i class="fa fa-phone"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask='"mask": "999-999-999"' data-mask>
+                  <input type="text" class="form-control" data-inputmask='"mask": "999-999-999"' data-mask name="number">
                 </div>
                 <!-- /.input group -->
               </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" disabled>
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password" readonly>
                 </div>
             
               </div>
@@ -87,8 +87,8 @@
               <div class="col-md-5">
               <div class="row">
                <div class="form-group col-md-6">
-                  <label for="exampleInputFile">Select Photo</label>
-                  <input type="file" id="exampleInputFile">
+                  <label for="photo">Select Photo</label>
+                  <input type="file" id="photo">
                 </div>
                 <div class="col-md-6" style="height:180px; width:200px; border:1px solid black;">
                   
@@ -96,8 +96,8 @@
                 <div>
                 </div>
                <div class="form-group">
-               <label for="program">Admission Year</label>
-              <select name="program" id="sex" class="form-control">
+               <label >Admission Year</label>
+              <select class="form-control" name="admissionyear">
               <option>2015/2016</option>
               <option>2016/2017</option>
               <option>2017/2018</option>
@@ -105,7 +105,8 @@
             </select>
                </div>
                 <div class="box-footer">
-                <button type="submit" class="btn btn-lg btn-slick">Submit</button>
+                <input type="hidden" name="_token" value={{Session::token()}}>
+                <button type="submit" class="btn btn-lg btn-slick" id="register-student">Submit</button>
               </div>
               </div>
               <!-- /.box-body -->

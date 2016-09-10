@@ -40,6 +40,8 @@
    
     @yield('content')
 
+    @include('pages.modals')
+
     <!--Resources for JS-->
     <input type="hidden" value="{{url('/')}}" id="baseUrl">
      <input type="hidden" value="{{Session::token()}}" id="token">
@@ -83,6 +85,7 @@
 <script src="dist/js/demo.js"></script>
 <!-- LoadViews for loading of ajax views -->
 <script src="dist/js/load.views.js"></script>
+<script src="dist/js/submit.forms.js"></script>
 <!--Input Mask -->
 <script src="plugins/input-mask/jquery.inputmask.js"></script>
 <script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>

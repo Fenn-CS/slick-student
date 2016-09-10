@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\User;
 class DashboardController extends Controller
 {
     /**
@@ -25,7 +25,9 @@ class DashboardController extends Controller
 
     public function getStudentsView()
     {
-return ['title'=>'<h1>Student List <small>Control Panel</small><h1>','content'=>view('pages.viewstudents')->render()];
+        $controller = new StudentController;
+
+return ['title'=>'<h1>Student List <small>Control Panel</small><h1>','content'=>view('pages.viewstudents',['students'=>$controller->getStudents()])->render()];
 
     }
 
@@ -50,5 +52,8 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
     {
 return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('pages.viewscores')->render()];       
 
+    }
+    public function test(){
+       
     }
 }

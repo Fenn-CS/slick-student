@@ -12,14 +12,14 @@
                 {{ csrf_field() }}
           <img src="{{asset('dist/img/slick.png')}}" class="img-responsive" alt="" />
 
-            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <div class="form-group{{ $errors->has('reg_number') ? ' has-error' : '' }}">
 
                             <div class="">
-                                 <input type="email" name="email" required class="form-control input-lg" placeholder="CT15HND001" value="{{ old('email') }}"/>
+                                 <input type="text" name="reg_number" required class="form-control input-lg" placeholder="CT15HND001" value="{{ old('reg_number') }}"/>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('reg_number'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('reg_number') }}</strong>
                                     </span>
                                 @endif
                             </div>

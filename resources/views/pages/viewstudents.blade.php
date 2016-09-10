@@ -5,7 +5,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="student-list-table" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>#</th>
@@ -17,39 +17,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
+                @foreach($students as $student)
+                  <tr>
+                  <td>#</td>
+                  <td>{{$student->reg_number}}</td>
+                  <td>{{$student->name}}</td>
+                  <td>null</td>
+                  <td>{{$student->student->program}}</td>
                   <td>
                   <a class="actions"><i class="fa fa-edit"></i></a>
                   <a class="actions"><i class="fa fa-trash-o"></i></a>
                   </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
-                </tr>
-               
-               
+                @endforeach
+                </tbody>
+                 <tfoot>
                 </tfoot>
               </table>
             </div>

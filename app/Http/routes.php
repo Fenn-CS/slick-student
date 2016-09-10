@@ -23,6 +23,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'DashboardController@dashboard');
 Route::get('/create/roles-permissions','AdminController@createDefaultRolesAndPermissions');
+Route::get('/test', 'DashboardController@test');
 
 
 
@@ -76,4 +77,10 @@ Route::get('/views/getdepartments', 'DashboardController@getDepartmentsView');
 Route::get('/views/getclasses', 'DashboardController@getClassesView');
 Route::get('/views/getteachers', 'DashboardController@getTeachersView');
 Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed to be a post
+
+
+
+
+//Post Routes
+Route::post('/students/register', 'StudentController@addNewStudent');
 
