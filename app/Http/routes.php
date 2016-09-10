@@ -2,6 +2,7 @@
 use App\Role;
 use App\Permission;
 use App\User;
+use App\Department;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,8 @@ Route::get('/views/addstudent', function(){
 
 
 Route::get('/views/addcourse', function(){
-    return ['title'=>'<h1>Register New Course <small>Control Panel</small><h1>','content'=>view('pages.addcourse')->render()];
+	$departments = Department::all();
+    return ['title'=>'<h1>Register New Course <small>Control Panel</small><h1>','content'=>view('pages.addcourse',['departments'=>$departments])->render()];
 });
 Route::get('/views/assigncourse', function(){
 	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse')->render()];
@@ -82,5 +84,8 @@ Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed 
 
 
 //Post Routes
+/*Students*/
 Route::post('/students/register', 'StudentController@addNewStudent');
+/*Courses*/
+Route::post('/courses/add', 'CourseController@addNewCourse');
 

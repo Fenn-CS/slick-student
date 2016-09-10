@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form id="form-add-course">
               <div class="box-body">
                 <div class="form-group">
                   <label for="code">Course Code</label>
@@ -18,19 +18,18 @@
                 </div>
                 <div class="form-group">
                   <label >Department</label>
-                  <select class="form-control" name="creditvalue">
-                  <option>ELECTRICAL</option>
-                   <option>COMPUTER</option>
-                    <option>TWCET</option>
-              
+                  <select class="form-control" name="department">
+                  @foreach($departments as $department)
+                  <option>{{$department->name}}</option>
+                  @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label >Level</label>
-                  <select class="form-control" name="creditvalue">
-                  <option>Level 200</option>
-                   <option>Level 300</option>
-                    <option>Level 400</option>
+                  <select class="form-control" name="level">
+                  <option>200</option>
+                   <option>300</option>
+                    <option>400</option>
                   
                   </select>
                 </div>
@@ -45,7 +44,7 @@
                 </div>
                  <div class="form-group">
                   <label >Status</label>
-                  <select class="form-control" name="creditvalue">
+                  <select class="form-control" name="status">
                   <option>A</option>
                    <option>B</option>
                     <option>C</option>
@@ -57,7 +56,9 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-slick">Validate</button>
+                <input type="hidden" name="_token" value={{Session::token()}}>
+                <button type="submit" class="btn btn-slick" id="save-new-course">Validate</button>
+
               </div>
             </form>
           </div>

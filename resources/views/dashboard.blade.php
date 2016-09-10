@@ -161,7 +161,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-         <li class="active treeview">
+         <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Info</span>
             <span class="pull-right-container">
@@ -169,11 +169,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a id=""><i class="fa fa-circle-o"></i>My Info</a></li>
+            <li ><a id=""><i class="fa fa-circle-o"></i>My Info</a></li>
             <li><a  id="form-viewstudents"><i class="fa fa-circle-o"></i>Status</a></li>
           </ul>
         </li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Students</span>
             <span class="pull-right-container">

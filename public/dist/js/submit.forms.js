@@ -11,6 +11,15 @@ $('body').on('click', '#register-student', function(event){
 
 });
 
+$('body').on('click', '#save-new-course', function(event){
+  event.preventDefault();
+  var data= $('#form-add-course').serialize();
+  var url = base+'/courses/add';
+  sendform(url, data);
+
+});
+
+
 
 
 

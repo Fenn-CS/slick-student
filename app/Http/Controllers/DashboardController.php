@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Department;
 class DashboardController extends Controller
 {
     /**
@@ -25,7 +26,7 @@ class DashboardController extends Controller
 
     public function getStudentsView()
     {
-        $controller = new StudentController;
+        $controller = new StudentController();
 
 return ['title'=>'<h1>Student List <small>Control Panel</small><h1>','content'=>view('pages.viewstudents',['students'=>$controller->getStudents()])->render()];
 
@@ -33,7 +34,8 @@ return ['title'=>'<h1>Student List <small>Control Panel</small><h1>','content'=>
 
     public function getCoursesView()
     {
-return ['title'=>'<h1>Course List <small>Control Panel</small><h1>','content'=>view('pages.viewcourses')->render()];
+        $controller = new CourseController();
+return ['title'=>'<h1>Course List <small>Control Panel</small><h1>','content'=>view('pages.viewcourses', ['courses'=>$controller->getCourses()])->render()];
     }
     public function getDepartmentsView()
     {
@@ -54,6 +56,13 @@ return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('
 
     }
     public function test(){
-       
+      // $dept = new Department();
+      // $dept->name ='ELECTRICAL';
+      // $dept->save();
+      // $dept = new Department();
+      // $dept->name ='COMPUTER';
+      // $dept->save();
+      // return 'Kool';
+
     }
 }

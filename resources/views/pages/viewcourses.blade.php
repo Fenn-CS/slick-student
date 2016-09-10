@@ -11,42 +11,32 @@
                   <th>#</th>
                   <th>Code</th>
                   <th>Title</th>
+                  <th>Credit Val</th>
+                  <th>Status</th>
+                  <th>Level</th>
                   <th>Instructors</th>
                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($courses as $course)
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
+                  <td>#</td>
+                  <td>{{$course->code}} </td>
+                  <td>{{$course->title}}</td>
+                  <td>{{$course->credit_value}}</td>
+                  <td>{{$course->status}}</td>
+                  <td>{{$course->level}}</td>
+                  <td>null</td>
                   <td>
                   <a class="actions"><i class="fa fa-edit"></i></a>
                   <a class="actions"><i class="fa fa-trash-o"></i></a>
                   </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-  
-                  <td>A</td>
-                </tr>
+                @endforeach
+              </tbody>
                
-               
+               <tfoot>
                 </tfoot>
               </table>
             </div>

@@ -70,7 +70,7 @@ class StudentController extends Controller
         $student->department= '';
         $student->admission_year = $admission_year;
         if(!$user->student()->save($student)){
-        return ['success'=>true,'message'=>'An unexpected error occured'];
+        return ['success'=>false,'message'=>'An unexpected error occured'];
         }
 
      // $student = new Student();
