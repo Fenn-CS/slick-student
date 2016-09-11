@@ -57,8 +57,12 @@ class StudentController extends Controller
         $user->email = $email;
         $user->personality ='student';
         $user->password = bcrypt($matricule);
-        if(!$user->save()){
-        return ['success'=>false,'message'=>'An unexpected error occured'];
+        try { 
+         $user->save();
+        } catch(\Illuminate\Database\QueryException $ex){ 
+
+       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'];
+       // Note any method of class PDOException can be called on $ex.
         }
 
         $student = new Student();
@@ -69,16 +73,20 @@ class StudentController extends Controller
         $student->program =$program;
         $student->department= '';
         $student->admission_year = $admission_year;
-        if(!$user->student()->save($student)){
-        return ['success'=>false,'message'=>'An unexpected error occured'];
-        }
+        try { 
+        $user->student()->save($student);
+        } catch(\Illuminate\Database\QueryException $ex){ 
+        
+       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'];
+       // Note any method of class PDOException can be called on $ex.
+      }
 
      // $student = new Student();
      // $student->name = 'Muki Charles';
      // $student->reg_number = 'CT15A010';
      // $student->password =bcrypt('000000');
      // $student->save();
-        return ['success'=>true,'message'=>'Student '.$matricule.' Registered Sucessfully'];
+        return ['success'=>true,'message'=>'Student '.$matricule.' Registered Sucessfully','reset'=>'#form-addstudent'];
 
     }
 

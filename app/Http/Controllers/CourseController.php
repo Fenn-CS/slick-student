@@ -38,7 +38,7 @@ class CourseController extends Controller
        $department = Department::where('name',$department)->first();
        $department->courses()->save($course);
 
-       return ['success'=>true,'message'=>'Course '.$code.' Registered Sucessfully'];
+       return ['success'=>true,'message'=>'Course '.$code.' Registered Sucessfully','reset'=>'#form-addcourse'];
 
     }
 

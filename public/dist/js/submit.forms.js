@@ -37,7 +37,7 @@ function sendform(url,data){
         if(data.success){
             $('.infoMsg').html(data.message);
         	$('#infoModal').modal();
-        	$('#form-addstudent').trigger('click');
+        	$(data.reset).trigger('click');
 
            return;
 
