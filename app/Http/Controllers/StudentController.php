@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Student;
 use App\User;
+use App\Program;
 
 class StudentController extends Controller
 {
     //
       public function addNewStudent(Request $request)
     {
-    	$password = $request['password'];
+    
     	$name = $request['name'];
     	$nid = $request['nid'];
     	$email = $request['email'];
@@ -41,11 +42,8 @@ class StudentController extends Controller
         }if($birthplace==''){
          $problems .='<li>You must provide student place of birth</li>';  	
         }if($program==''){
-         $problems .='<li>You must select a program this student</li>';  	
-        }if($sex==''){
-         $problems .='<li>You must select student sex</li></ul>';  	
+         $problems .='<li>You must select a program for this student</li>';  	
         }
-        	
       
         if($problems!=''){
         return ['success'=>false,'message'=>'Student registration failed due to the following errors <br><br>'.$problems];
@@ -55,13 +53,14 @@ class StudentController extends Controller
         $user->name = $name;
         $user->reg_number=$matricule;
         $user->email = $email;
-        $user->personality ='student';
+        $user->personality ='Student';
         $user->password = bcrypt($matricule);
+       
         try { 
          $user->save();
         } catch(\Illuminate\Database\QueryException $ex){ 
 
-       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'];
+       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'.$ex->getMessage()];
        // Note any method of class PDOException can be called on $ex.
         }
 
@@ -70,9 +69,10 @@ class StudentController extends Controller
         $student->date_of_birth = $birthdate;
         $student->place_of_birth = $birthplace;
         $student->phone = $phone;
-        $student->program =$program;
-        $student->department= '';
+        $program = Program::where('name',$program)->first();
+        $student->program = $program->id;
         $student->admission_year = $admission_year;
+        $student->sex = $sex;
         try { 
         $user->student()->save($student);
         } catch(\Illuminate\Database\QueryException $ex){ 
@@ -92,7 +92,7 @@ class StudentController extends Controller
 
     public function getStudents()
     {
-      $students=User::where('personality','student')->orderBy('created_at', 'desc')->paginate(50);
+      $students=User::where('personality','Student')->orderBy('created_at', 'desc')->paginate(50);
       return $students;
     }
 

@@ -47,4 +47,11 @@ class DepartmentController extends Controller
 
       return ['success'=>true,'message'=>'Department '.$name.' Registered Sucessfully','reset'=>'#form-addcourse'];
     }
+
+
+    public function getDepartments()
+    {
+    	$departments = Department::all();
+    	return $departments;
+    }
 }

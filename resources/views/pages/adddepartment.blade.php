@@ -10,7 +10,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Department Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="COMPUTER ENGINERING" name="name">
+                  <input type="text" class="form-control" id="name" placeholder="COMPUTER ENGINEERING" name="name">
                 </div>
                 <div class="form-group">
                   <label for="title">Program/ Programs Offered</label>

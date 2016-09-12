@@ -16,37 +16,27 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($departments as $department)
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
+                  <td></td>
+                  <td>{{$department->name}}</td>
+                  <td>
+                  <ul>
+                   @foreach($department->programs as $program) 
+                   <li> {{$program->name}} </li>
+                   @endforeach
+                   </ul>
                   </td>
-                  <td>Win 95+</td>
                   <td> 4</td>
                   <td>
                   <a class="actions"><i class="fa fa-edit"></i></a>
                   <a class="actions"><i class="fa fa-trash-o"></i></a>
                   </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-  
-                  <td>A</td>
-                </tr>
+                @endforeach
+               </tbody>
                
-               
+               <tfoot>
                 </tfoot>
               </table>
             </div>

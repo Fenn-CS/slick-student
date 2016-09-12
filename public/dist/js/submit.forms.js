@@ -27,6 +27,14 @@ $('body').on('click', '#save-new-department', function(event){
 
 });
 
+$('body').on('click', '#save-new-teacher', function(event){
+  event.preventDefault();
+  var data= $('#form-add-teacher').serialize();
+  var url = base+'/teachers/add';
+  sendform(url, data);
+
+});
+
 $('body').on('click', '#add-program', function(event){
  event.preventDefault();
  if($('#program-title').val()!=''){

@@ -48,9 +48,9 @@
               <div class="form-group">
               <label for="program">Admission Program</label>
               <select name="program" id="sex" class="form-control">
-              <option>HND Computer Engineering</option>
-              <option>HND Electrical Engineering</option>
-                
+              @foreach($programs as $program)
+              <option>{{$program->name}}</option>
+              @endforeach
             </select>
             </div>
               <div class="form-group">

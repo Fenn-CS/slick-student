@@ -33,8 +33,8 @@ Route::get('/test', 'DashboardController@test');
  *Routes to return views
  */
 Route::get('/views/addstudent', function(){
-
-	return ['title'=>'<h1>Register New Student <small>Control Panel</small><h1>','content'=>view('pages.addstudent')->render()];
+    $programs = Program::all();
+	return ['title'=>'<h1>Register New Student <small>Control Panel</small><h1>','content'=>view('pages.addstudent',['programs'=>$programs])->render()];
 });
 
 
@@ -91,6 +91,9 @@ Route::post('/students/register', 'StudentController@addNewStudent');
 Route::post('/courses/add', 'CourseController@addNewCourse');
 /*Departments*/
 Route::post('/departments/add', 'DepartmentController@addNewDepartment');
+/*Teachers*/
+Route::post('/teachers/add', 'TeacherController@addNewTeacher');
+
 
 
 

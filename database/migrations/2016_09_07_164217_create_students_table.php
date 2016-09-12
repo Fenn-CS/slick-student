@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('nid')->unique();
             $table->date('date_of_birth');
             $table->string('place_of_birth');
-            $table->unsignedInteger('department');
+            $table->string('sex');
             $table->unsignedInteger('program');
             $table->string('phone');
             $table->string('admission_year');

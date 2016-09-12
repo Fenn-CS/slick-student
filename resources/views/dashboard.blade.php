@@ -144,7 +144,7 @@
         </div>
         <div class="pull-left info">
           <p>{{Auth::user()->name}}</p>
-          <a href="#">Teacher</a>
+          <a href="#">{{Auth::user()->personality}}</a>
         </div>
       </div>
       <!-- search form -->
@@ -183,6 +183,18 @@
           <ul class="treeview-menu">
             <li class="active"><a id="form-addstudent"><i class="fa fa-circle-o"></i>Add</a></li>
             <li><a  id="form-viewstudents"><i class="fa fa-circle-o"></i>View</a></li>
+          </ul>
+        </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Teachers</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a id="form-addteacher"><i class="fa fa-circle-o"></i>Add</a></li>
+            <li><a id="form-viewteachers"><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -228,18 +240,7 @@
             <li><a id="form-viewclasses"><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Teachers</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a id="form-addteacher"><i class="fa fa-circle-o"></i>Add</a></li>
-            <li><a id="form-viewteachers"><i class="fa fa-circle-o"></i>View</a></li>
-          </ul>
-        </li>
+       
         <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Results</span>

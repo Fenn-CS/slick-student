@@ -40,7 +40,8 @@ return ['title'=>'<h1>Course List <small>Control Panel</small><h1>','content'=>v
     }
     public function getDepartmentsView()
     {
-return ['title'=>'<h1>View Departments <small>Control Panel</small><h1>','content'=>view('pages.viewdepartments')->render()];
+      $controller = new DepartmentController();
+return ['title'=>'<h1>View Departments <small>Control Panel</small><h1>','content'=>view('pages.viewdepartments', ['departments'=>$controller->getDepartments()])->render()];
     }
     public function getClassesView()
     {
@@ -48,7 +49,8 @@ return ['title'=>'<h1>View Classes <small>Control Panel</small><h1>','content'=>
     }
     public function getTeachersView()
     {
-return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=>view('pages.viewteachers')->render()];       
+      $controller = new TeacherController();
+return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=>view('pages.viewteachers',['teachers'=>$controller->getTeachers()])->render()];       
 
     }
     public function getScoresView()

@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
         $user = new User();
         $user->name = 'DEFAULT ADMIN';
         $user->reg_number ='CT15A051';
+        $user->personality ='Admin';
         $user->password = bcrypt('123456');
         $user->save();
     }
