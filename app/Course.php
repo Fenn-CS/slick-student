@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     //
-    public function department()
+    public function program()
     {
-     return $this->belongsTo('App\Department');
+     return $this->belongsTo('App\Program');
     }
 }

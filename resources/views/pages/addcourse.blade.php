@@ -17,10 +17,10 @@
                   <input type="text" class="form-control" id="title" placeholder="MATHEMATICS 1" name="title">
                 </div>
                 <div class="form-group">
-                  <label >Department</label>
-                  <select class="form-control" name="department">
-                  @foreach($departments as $department)
-                  <option>{{$department->name}}</option>
+                  <label >Program</label>
+                  <select class="form-control" name="program">
+                  @foreach($programs as $program)
+                  <option>{{$program->name}}</option>
                   @endforeach
                   </select>
                 </div>

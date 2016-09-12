@@ -3,6 +3,7 @@ use App\Role;
 use App\Permission;
 use App\User;
 use App\Department;
+use App\Program;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +39,8 @@ Route::get('/views/addstudent', function(){
 
 
 Route::get('/views/addcourse', function(){
-	$departments = Department::all();
-    return ['title'=>'<h1>Register New Course <small>Control Panel</small><h1>','content'=>view('pages.addcourse',['departments'=>$departments])->render()];
+	$programs = Program::all();
+    return ['title'=>'<h1>Register New Course <small>Control Panel</small><h1>','content'=>view('pages.addcourse',['programs'=>$programs])->render()];
 });
 Route::get('/views/assigncourse', function(){
 	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse')->render()];

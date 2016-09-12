@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Department;
+use App\Program;
 use App\Course;
 
 class CourseController extends Controller
@@ -13,7 +14,7 @@ class CourseController extends Controller
     //
     public function addNewCourse(Request $request)
     {
-       $department = $request['department'];
+       $program = $request['program'];
        $code = $request['code'];
        $title = $request['title'];
        $credval = $request['creditvalue'];
@@ -35,8 +36,17 @@ class CourseController extends Controller
        $course->credit_value=$credval;
        $course->status=$status;
        $course->level=$level;
-       $department = Department::where('name',$department)->first();
-       $department->courses()->save($course);
+       $program = Program::where('name',$program)->first();
+       try{
+        
+        $program->courses()->save($course);
+
+       }catch(\Illuminate\Database\QueryException $ex){ 
+
+       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'];
+       // Note any method of class PDOException can be called on $ex.
+        }
+       
 
        return ['success'=>true,'message'=>'Course '.$code.' Registered Sucessfully','reset'=>'#form-addcourse'];
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Department;
+use App\Program;
 class DashboardController extends Controller
 {
     /**
@@ -63,6 +64,14 @@ return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('
       // $dept->name ='COMPUTER';
       // $dept->save();
       // return 'Kool';
+
+       $program = new Program();
+       $program->name = 'SOFTWARE';
+       $program->save();
+       $program = new Program();
+       $program->name = 'HARDWARE';
+       $program->save();
+       return 'Kool';
 
     }
 }
