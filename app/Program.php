@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     //
-     public function courses()
+    public function department()
+    {
+    return $this->belongsTo('App\Department');
+    }
+    public function courses()
     {
     return $this->hasMany('App\Course');
     }

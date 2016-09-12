@@ -89,4 +89,8 @@ Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed 
 Route::post('/students/register', 'StudentController@addNewStudent');
 /*Courses*/
 Route::post('/courses/add', 'CourseController@addNewCourse');
+/*Departments*/
+Route::post('/departments/add', 'DepartmentController@addNewDepartment');
+
+
 

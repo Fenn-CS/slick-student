@@ -20,7 +20,8 @@ class CreateCoursesTable extends Migration
              $table->unsignedInteger('credit_value');
              $table->string('status');
              $table->unsignedInteger('level');
-            $table->timestamps();
+             $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
+             $table->timestamps();
         });
     }
 

@@ -19,6 +19,22 @@ $('body').on('click', '#save-new-course', function(event){
 
 });
 
+$('body').on('click', '#save-new-department', function(event){
+  event.preventDefault();
+  var data= $('#form-add-department').serialize();
+  var url = base+'/departments/add';
+  sendform(url, data);
+
+});
+
+$('body').on('click', '#add-program', function(event){
+ event.preventDefault();
+ if($('#program-title').val()!=''){
+ addprogram($('#program-title').val());
+ $('#program-title').val('');
+	}
+});
+
 
 
 
@@ -60,5 +76,12 @@ function sendform(url,data){
          });
 
 }
+
+ function addprogram(name){
+
+ 	$('#program-list').append('<li>'+name+'</li>');
+ 	$('#programs').val($('#programs').val() +','+name);
+
+ }
 
 });

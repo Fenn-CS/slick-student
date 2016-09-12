@@ -209,8 +209,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a id="form-adddepartment"><i class="fa fa-circle-o"></i>Add</a></li>
-            <li><a id="form-viewdepartments"><i class="fa fa-circle-o"></i>View</a></li>
+            <li><a id="form-adddepartment"><i class="fa fa-circle-o"></i>Add Department</a></li>
+            <li><a id="form-viewdepartments"><i class="fa fa-circle-o"></i>View Departments</a></li>
+            <li><a id="form-adddprogam"><i class="fa fa-circle-o"></i>Add Programs</a></li>
+            <li><a id="form-viewprograms"><i class="fa fa-circle-o"></i>View Programs</a></li>
           </ul>
         </li>
         <li class="treeview">
