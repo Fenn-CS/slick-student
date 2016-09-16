@@ -31,10 +31,9 @@
                 <div class="form-group">
                   <label >Assign Teacher</label>
                   <select class="form-control" name="creditvalue">
-                  <option>MR TIOSOP</option>
-                   <option>MR NGATA</option>
-                    <option>DR DOH</option>
-                     <option>DR AGBOR</option>
+                    @foreach($teachers as $teacher)
+                <option> {{$teacher->name}} </option>
+                @endforeach
                   </select>
                 </div>
                

@@ -43,7 +43,8 @@ Route::get('/views/addcourse', function(){
     return ['title'=>'<h1>Register New Course <small>Control Panel</small><h1>','content'=>view('pages.addcourse',['programs'=>$programs])->render()];
 });
 Route::get('/views/assigncourse', function(){
-	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse')->render()];
+	$teachers=User::where('personality','Teacher')->get();
+	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse',['teachers'=>$teachers])->render()];
 });
 
 Route::get('/views/addclass', function(){
