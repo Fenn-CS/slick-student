@@ -32,12 +32,10 @@
             </div>
             <div class="box-body">
               <!-- the events -->
-              <div id="external-events">
-                <div class="external-event bg-green">CEC115</div>
-                <div class="external-event bg-yellow">CVE100</div>
-                <div class="external-event bg-red">EEC204</div>
-                <button class="btn btn-sm btn-slick">Save</button>
+              <div id="selected-courses"> 
               </div>
+              <button class="btn btn-sm btn-success">Save</button>
+              <button class="btn btn-sm btn-slick" id="clear">Clear</button>
             </div>
             <!-- /.box-body -->
             </div>

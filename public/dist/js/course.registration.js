@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 var base = $('#baseUrl').val();
 var url ='';
+var selected='';
 
 
 $('body').on('change', '#level-courses', function(event){
@@ -16,10 +17,20 @@ var form = $('<form></form>');
 
 });
 
+$('body').on('click', '.available-course', function(event){
 
+if(selected.search($(event.target).data('coursecode'))==-1){
+ selected += $(event.target).data('coursecode')+'-'; 
+ $('#selected-courses').append($(event.target));
+ console.log(selected);
+}
 
+});
 
-
+$('body').on('click', '#clear', function(event){
+ selected ='';
+ $('#selected-courses').html('');
+});
 
 
 
@@ -57,6 +68,7 @@ function sendform(url,data){
          });
 
 }
+
 
 
 
