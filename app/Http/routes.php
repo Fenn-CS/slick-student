@@ -4,6 +4,7 @@ use App\Permission;
 use App\User;
 use App\Department;
 use App\Program;
+use App\Course;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +44,9 @@ Route::get('/views/addcourse', function(){
     return ['title'=>'<h1>Register New Course <small>Control Panel</small><h1>','content'=>view('pages.addcourse',['programs'=>$programs])->render()];
 });
 Route::get('/views/assigncourse', function(){
-	$teachers=User::where('personality','Teacher')->get();
-	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse',['teachers'=>$teachers])->render()];
+	$teachers = User::where('personality','Teacher')->get();
+	$courses  = Course::all();
+	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse',['teachers'=>$teachers,'courses'=>$courses])->render()];
 });
 
 Route::get('/views/addclass', function(){
@@ -90,10 +92,14 @@ Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed 
 Route::post('/students/register', 'StudentController@addNewStudent');
 /*Courses*/
 Route::post('/courses/add', 'CourseController@addNewCourse');
+//Get courses available for registration.
+Route::post('/courses/registration/get', 'CourseController@getAvailableCourses');
 /*Departments*/
 Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 /*Teachers*/
 Route::post('/teachers/add', 'TeacherController@addNewTeacher');
+
+
 
 
 

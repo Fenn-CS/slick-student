@@ -56,4 +56,13 @@ class CourseController extends Controller
       $courses = Course::all();
       return $courses;
     }
+
+    public function getAvailableCourses(Request $request)
+    { 
+      $level ='';
+      if($request['level']!=='...')
+      $level =explode(" ",$request['level'])[1];
+      $courses =Course::where('level', $level)->get();
+      return ['success'=>true, 'message'=>$request['level'], 'courses'=>'<h4>Courses found for '. $level.'</h4>'.view('layouts.available-courses', ['courses'=>$courses])->render()];
+    }
 }

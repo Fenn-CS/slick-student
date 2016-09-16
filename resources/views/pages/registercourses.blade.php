@@ -50,16 +50,15 @@
             <div class="box-body">
               <!-- the events -->
             <div class="form-group">
-             <select class="form-control" name="creditvalue">
+             <select class="form-control" name="creditvalue" id="level-courses">
+                <option>...</option>
                   <option>Level 200</option>
                    <option>Level 300</option>
                     <option>Level 400</option>
                   </select>
               </div>
-              <div id="external-events">
-                <div class="external-event bg-green">ENG101</div>
-                <div class="external-event bg-yellow">EEC093</div>
-                <div class="external-event bg-red">EEC215</div>
+              <div id="available-courses">
+                
                
             </div>
             <!-- /.box-body -->

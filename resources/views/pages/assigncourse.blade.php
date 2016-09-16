@@ -12,10 +12,10 @@
               <div class="form-group">
                   <label >Course Code</label>
                   <select class="form-control" name="creditvalue">
-                  <option>EEC206</option>
-                   <option>CEC213</option>
-                    <option>CEC212</option>
-                     <option>CVE100</option>
+                    @foreach($courses as $course)
+                    <option>{{$course->code}}</option>
+                    @endforeach
+
                   </select>
                 </div>
                 <div class="form-group">
