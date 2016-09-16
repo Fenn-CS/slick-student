@@ -5,7 +5,7 @@ var url ='';
 var selected='';
 
 
-$('body').on('change', '#level-courses', function(event){
+$('body').on('click', '#level-courses', function(event){
 var form = $('<form></form>');
     form.append('<input type="text" name="level" value="'+ $(event.target).val() +'" />');
     form.append('<input type="hidden" name="_token" value="'+$('#token').val()+'" />');
@@ -41,9 +41,8 @@ function sendform(url,data){
      	data:data,
      	success:function(data){
         if(data.success){
-            $('.infoMsg').html(data.courses);
-        	$('#infoModal').modal();
-        	//alert(data.courses);
+         //    $('.infoMsg').html(data.courses);
+        	// $('#infoModal').modal();
             $('#available-courses').html(data.courses);
         	$(data.reset).trigger('click');
 

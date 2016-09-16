@@ -209,7 +209,7 @@
             <li><a id="form-addcourse"><i class="fa fa-circle-o"></i>Add</a></li>
             <li><a id="form-viewcourses"><i class="fa fa-circle-o"></i>View</a></li>
             <li><a id="form-assigncourse"><i class="fa fa-circle-o"></i>Assign</a></li>
-            <li><a id="form-registercourses"><i class="fa fa-circle-o"></i>Registrations</a></li>
+            <li><a id="form-registercourses"><i class="fa fa-circle-o"></i>Registration</a></li>
           </ul>
         </li>
         <li class="treeview">
