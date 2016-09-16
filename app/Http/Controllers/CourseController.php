@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Program;
 use App\Course;
+use App\RegisteredCourse;
+use App\Student;
+use App\User;
 
 class CourseController extends Controller
 {
@@ -63,6 +66,42 @@ class CourseController extends Controller
       if($request['level']!=='...')
       $level =explode(" ",$request['level'])[1];
       $courses =Course::where('level', $level)->get();
-      return ['success'=>true, 'message'=>$request['level'], 'courses'=>'<h4>Courses found for '. $level.'</h4>'.view('layouts.available-courses', ['courses'=>$courses])->render()];
+      return ['success'=>true,'selection'=>true, 'courses'=>'<h4>Courses found for '. $level.'</h4>'.view('layouts.courses', ['courses'=>$courses])->render()];
     }
+
+    public function saveRegisteredCourses(Request $request)
+    {   
+      if($request['courses']=='')
+      return ['success'=>false,'message'=>'What the hell are you trying to register?? an empty list? damm!'];
+      $user = User::find($request->user()->id);
+      if($user->personality=='Student'){
+      $student = Student::where('user_id', $request->user()->id)->first();
+      $courses = explode("-", $request['courses']);
+     
+      foreach($courses as $course){
+         if($course!='')  {
+        $Course = Course::where('code', $course)->first();
+        $registeredCourse = new RegisteredCourse();
+        $registeredCourse->course = $Course->id;
+        $student->courses()->save($registeredCourse);
+      }
+     }
+
+        $registeredcourses = $student->courses;
+        $courses =array();
+        foreach($registeredcourses as $registeredcourse )
+        {
+         $courses[] = Course::find($registeredcourse->id);
+        }
+        // $courses = Course::find(1);
+         //return ['success'=>true, 'courses'=>$var];
+        return ['success'=>true,'selection'=>false, 'courses'=>'<h4>Courses Registered</h4>'.view('layouts.courses', ['courses'=>[$courses]])->render()];
+
+
+    }  else {
+
+      return ['success'=>false,'message'=>'You are not a student why the hell are you trying to register courses?? '];
+     }
+}
+
 }

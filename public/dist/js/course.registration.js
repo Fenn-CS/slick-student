@@ -5,7 +5,7 @@ var url ='';
 var selected='';
 
 
-$('body').on('click', '#level-courses', function(event){
+$('body').on('change', '#level-courses', function(event){
 var form = $('<form></form>');
     form.append('<input type="text" name="level" value="'+ $(event.target).val() +'" />');
     form.append('<input type="hidden" name="_token" value="'+$('#token').val()+'" />');
@@ -32,6 +32,17 @@ $('body').on('click', '#clear', function(event){
  $('#selected-courses').html('');
 });
 
+$('body').on('click', '#save-registered-courses', function(event){
+	var form = $('<form></form>');
+    form.append('<input type="text" name="courses" value="'+selected+'" />');
+    form.append('<input type="hidden" name="_token" value="'+$('#token').val()+'" />');
+    data = form.serialize();
+	url = base+'/courses/registration/save';
+	sendform(url, data);
+
+
+});
+
 
 
 function sendform(url,data){
@@ -43,8 +54,17 @@ function sendform(url,data){
         if(data.success){
          //    $('.infoMsg').html(data.courses);
         	// $('#infoModal').modal();
+        	if(data.selection){
+
             $('#available-courses').html(data.courses);
         	$(data.reset).trigger('click');
+
+            } else if(!data.selection){
+                  $('.infoMsg').html(data.courses);
+        	      $('#infoModal').modal();
+        	      selected ='';
+                  $('#selected-courses').html('');
+            }
 
            return;
 

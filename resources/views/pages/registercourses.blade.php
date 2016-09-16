@@ -34,7 +34,7 @@
               <!-- the events -->
               <div id="selected-courses"> 
               </div>
-              <button class="btn btn-sm btn-success">Save</button>
+              <button class="btn btn-sm btn-success" id="save-registered-courses">Save</button>
               <button class="btn btn-sm btn-slick" id="clear">Clear</button>
             </div>
             <!-- /.box-body -->

@@ -94,6 +94,8 @@ Route::post('/students/register', 'StudentController@addNewStudent');
 Route::post('/courses/add', 'CourseController@addNewCourse');
 //Get courses available for registration.
 Route::post('/courses/registration/get', 'CourseController@getAvailableCourses');
+//Save registered courses
+Route::post('/courses/registration/save', 'CourseController@saveRegisteredCourses');
 /*Departments*/
 Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 /*Teachers*/
