@@ -95,6 +95,8 @@ Route::post('/courses/add', 'CourseController@addNewCourse');
 Route::post('/courses/registration/get', 'CourseController@getAvailableCourses');
 //Save registered courses
 Route::post('/courses/registration/save', 'CourseController@saveRegisteredCourses');
+//Delete a registered course
+Route::post('/courses/registration/drop', 'RegisteredCourseController@dropRegisteredCourse');
 /*Departments*/
 Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 /*Teachers*/

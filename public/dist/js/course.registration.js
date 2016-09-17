@@ -10,9 +10,9 @@ var form = $('<form></form>');
     form.append('<input type="text" name="level" value="'+ $(event.target).val() +'" />');
     form.append('<input type="hidden" name="_token" value="'+$('#token').val()+'" />');
     data = form.serialize();
-    
+    console.log(data);
     url = base+'/courses/registration/get';
-    sendform(url, data);
+    sendform(url, data, event);
 
 
 });
@@ -38,19 +38,27 @@ $('body').on('click', '#save-registered-courses', function(event){
     form.append('<input type="hidden" name="_token" value="'+$('#token').val()+'" />');
     data = form.serialize();
 	url = base+'/courses/registration/save';
-	sendform(url, data);
+	sendform(url, data, event);
 
 
 });
 
+$('body').on('click','.drop-course', function(event){
+data='course='+$(event.target).data('courseid')+'&_token='+$('#token').val();
+url = base+'/courses/registration/drop';
+sendform(url,data,event); 
+});
 
 
-function sendform(url,data){
+
+function sendform(url,data, event){
+	$(event.target).attr("disabled", true);
 		 $.ajax({
      	url:url,
      	type: "POST",
      	data:data,
      	success:function(data){
+     	$(event.target).attr("disabled", false);
         if(data.success){
          //    $('.infoMsg').html(data.courses);
         	// $('#infoModal').modal();
@@ -59,13 +67,19 @@ function sendform(url,data){
             $('#available-courses').html(data.courses);
         	$(data.reset).trigger('click');
 
-            } else if(!data.selection){
+            } 
+            if(!data.selection){
                   $('.infoMsg').html(data.courses);
         	      $('#infoModal').modal();
         	      selected ='';
                   $('#selected-courses').html('');
                   $('#registered-courses').html(data.courses);
 
+            }  
+            if(data.dropped){
+            	$('.infoMsg').html(data.message);
+        	    $('#infoModal').modal();
+        	    console.log('gotin');
             }
 
            return;

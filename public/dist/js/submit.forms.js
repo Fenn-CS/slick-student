@@ -7,7 +7,7 @@ $('body').on('click', '#register-student', function(event){
   event.preventDefault();
   var data= $('#form-register-student').serialize();
   var url = base+'/students/register';
-  sendform(url, data);
+  sendform(url, data, event);
 
 });
 
@@ -15,7 +15,7 @@ $('body').on('click', '#save-new-course', function(event){
   event.preventDefault();
   var data= $('#form-add-course').serialize();
   var url = base+'/courses/add';
-  sendform(url, data);
+ sendform(url, data, event);
 
 });
 
@@ -23,7 +23,7 @@ $('body').on('click', '#save-new-department', function(event){
   event.preventDefault();
   var data= $('#form-add-department').serialize();
   var url = base+'/departments/add';
-  sendform(url, data);
+ sendform(url, data, event);
 
 });
 
@@ -31,7 +31,7 @@ $('body').on('click', '#save-new-teacher', function(event){
   event.preventDefault();
   var data= $('#form-add-teacher').serialize();
   var url = base+'/teachers/add';
-  sendform(url, data);
+ sendform(url, data, event);
 
 });
 
@@ -52,12 +52,14 @@ $('body').on('click', '#add-program', function(event){
 
 
 
-function sendform(url,data){
+function sendform(url,data, event){
+	$(event.target).attr("disabled", true);
 		 $.ajax({
      	url:url,
      	type: "POST",
      	data:data,
      	success:function(data){
+     	$(event.target).attr("disabled", true);
         if(data.success){
             $('.infoMsg').html(data.message);
         	$('#infoModal').modal();
