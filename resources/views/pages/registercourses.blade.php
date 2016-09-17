@@ -70,4 +70,17 @@
               
             </div>
             </div>
+          <!--  Actions with respect to course registration -->
+            <div class="box box-solid">
+            <div class="box-header with-border">
+              <h4 class="box-title">Actions</h4>
+            </div>
+             <div class="box-body">
+            <button class="btn btn-lg btn-success">
+              Get my form B. :)
+            </button>
+              
+            </div>
+            </div>
+
             </div>

@@ -61,8 +61,10 @@ function sendform(url,data, event){
      	success:function(data){
      	$(event.target).attr("disabled", true);
         if(data.success){
-            $('.infoMsg').html(data.message);
-        	$('#infoModal').modal();
+            // $('.infoMsg').html(data.message);
+        	// $('#infoModal').modal();
+        	 $('#floating-alert').html('<h4>'+data.message+'</h4>');
+        	 $("#floating-alert").show().delay(5000).fadeOut();
         	$(data.reset).trigger('click');
 
            return;
