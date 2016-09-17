@@ -115,7 +115,7 @@ class CourseController extends Controller
      $courses =array();
       foreach($registeredcourses as $registeredcourse )
         {
-          $course = Course::find($registeredcourse->student_id);
+          $course = Course::find($registeredcourse->course);
           if($course instanceof Course)
            $courses[] = $course;
         }
