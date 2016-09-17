@@ -16,4 +16,7 @@
   </div>
 </div>
 </div>
+<div class="alert alert-error text-center col-md-4 col-md-offset-4" id="floating-alert" style="display:none; margin-top:none; top:0px; z-index:10000; position:fixed">
+  <h4>All the crazy messages</h4>
+</div>
 <!-- Information modal end -->

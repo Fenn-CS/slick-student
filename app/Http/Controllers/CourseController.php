@@ -95,11 +95,11 @@ class CourseController extends Controller
       }
      }
         /*Get All courses registered by student and pass the to the view for rendering */
-      
+           
            $courses = $this->getRegisteredCourses($student->id);
        
      
-        return ['success'=>true,'selection'=>false, 'courses'=>'<h4>Courses Registered '.count($courses).'</h4>'.view('layouts.reg-courses', ['courses'=>$courses])->render()];
+        return ['success'=>true,'registration'=>true, 'courses'=>'<h4>Courses Registered '.count($courses).'</h4>'.view('layouts.reg-courses', ['courses'=>$courses])->render()];
 
 
     }  else {
@@ -108,19 +108,12 @@ class CourseController extends Controller
      }
 }
 
-    public function getRegisteredCourses($id)
-    {
-   $student =Student::find($id);
-    $registeredcourses = $student->courses;
-     $courses =array();
-      foreach($registeredcourses as $registeredcourse )
-        {
-          $course = Course::find($registeredcourse->course);
-          if($course instanceof Course)
-           $courses[] = $course;
-        }
-
-        return $courses;
+   public function getRegisteredCourses($id)
+   {
+     $regController = new RegisteredCourseController();
+    return $regController->getRegisteredCourses($id);
    }
+
+   
 
 }

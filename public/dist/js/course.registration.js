@@ -10,7 +10,6 @@ var form = $('<form></form>');
     form.append('<input type="text" name="level" value="'+ $(event.target).val() +'" />');
     form.append('<input type="hidden" name="_token" value="'+$('#token').val()+'" />');
     data = form.serialize();
-    console.log(data);
     url = base+'/courses/registration/get';
     sendform(url, data, event);
 
@@ -60,26 +59,27 @@ function sendform(url,data, event){
      	success:function(data){
      	$(event.target).attr("disabled", false);
         if(data.success){
-         //    $('.infoMsg').html(data.courses);
-        	// $('#infoModal').modal();
+     
         	if(data.selection){
 
             $('#available-courses').html(data.courses);
-        	$(data.reset).trigger('click');
 
             } 
-            if(!data.selection){
-                  $('.infoMsg').html(data.courses);
-        	      $('#infoModal').modal();
+            if(data.registration){
+                  $('#floating-alert').html('<h4>Courses registered, work hard! :)</h4>');
+        	      $("#floating-alert").show().delay(5000).fadeOut();
         	      selected ='';
                   $('#selected-courses').html('');
                   $('#registered-courses').html(data.courses);
 
             }  
             if(data.dropped){
-            	$('.infoMsg').html(data.message);
-        	    $('#infoModal').modal();
-        	    console.log('gotin');
+            	//Course dropped update UI
+        	    $('#registered-courses').html(data.remaining);
+        	    $('#floating-alert').html('<h4>Course dropped, you are a free bird! :)</h4>');
+        	    $("#floating-alert").show().delay(5000).fadeOut();
+        	    return;
+        	   
             }
 
            return;
@@ -87,6 +87,7 @@ function sendform(url,data, event){
         } else {
                  $('.infoMsg').html(data.message);
         	     $('#infoModal').modal();
+        	     console.log('Hey')
                }
       },
       
