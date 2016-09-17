@@ -6,6 +6,7 @@ use App\Department;
 use App\Program;
 use App\Course;
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -73,10 +74,8 @@ Route::get('/views/adddepartment', function(){
 Route::get('/views/addteacher', function(){
 	return ['title'=>'<h1>Add Teacher <small>Control Panel</small><h1>','content'=>view('pages.addteacher')->render()];
 });
-Route::get('/views/registercourses', function(){
-	return ['title'=>'<h1>Course Registration <small>Control Panel</small><h1>','content'=>view('pages.registercourses')->render()];
-});
 
+Route::get('/views/registercourses', 'DashboardController@getRegisterCoursesView');
 Route::get('/views/getstudents', 'DashboardController@getStudentsView');
 Route::get('/views/getcourses', 'DashboardController@getCoursesView');
 Route::get('/views/getdepartments', 'DashboardController@getDepartmentsView');

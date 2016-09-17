@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Student;
 use App\Department;
 use App\Program;
+use App\RegisteredCourse;
 class DashboardController extends Controller
 {
     /**
@@ -58,7 +60,15 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
 return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('pages.viewscores')->render()];       
 
     }
-    public function test(){
+
+    public function getRegisterCoursesView(Request $request)
+    {
+      $controller = new CourseController();
+      $student = Student::where('user_id', $request->user()->id)->first();
+      return ['title'=>'<h1>Course Registration <small>Control Panel</small><h1>','content'=>view('pages.registercourses', ['courses'=>$controller->getRegisteredCourses($student->id)])->render()];
+    }
+    public function test(Request $request){
+      //Test to create department
       // $dept = new Department();
       // $dept->name ='ELECTRICAL';
       // $dept->save();
@@ -66,14 +76,25 @@ return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('
       // $dept->name ='COMPUTER';
       // $dept->save();
       // return 'Kool';
+       
+       //Test to create program;
+       // $program = new Program();
+       // $program->name = 'SOFTWARE';
+       // $program->save();
+       // $program = new Program();
+       // $program->name = 'HARDWARE';
+       // $program->save();
+       // return 'Kool';$controller = new CourseController();
 
-       $program = new Program();
-       $program->name = 'SOFTWARE';
-       $program->save();
-       $program = new Program();
-       $program->name = 'HARDWARE';
-       $program->save();
-       return 'Kool';
+       //Test to courses for logged in student;
+      // $controller = new CourseController();
+      // $student = Student::where('user_id', $request->user()->id)->first();
 
-    }
+      // $courses = $controller->getRegisteredCourses($student->id);
+
+      // return $courses;
+
+     
+     }
+       
 }

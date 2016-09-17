@@ -5,20 +5,9 @@
             </div>
             <div class="box-body">
               <!-- the events -->
-              <div id="external-events">
-              <div class="row">
-                <div class="external-event bg-green col-md-offset-1 col-md-8">CVE100</div>
-                <div class="">
-                <button class="btn btn-sm btn-slick">DROP</button>
-                </div>
-                </div>
-                <div class="row">
-                <div class="external-event bg-yellow col-md-offset-1 col-md-8">CEC213</div>
-                 <div class="">
-                <button class="btn btn-sm btn-slick">DROP</button>
-                </div>
-                </div>
-                <div class="external-event bg-red">CEC212</div>
+              <div id="registered-courses">
+              @include('layouts.reg-courses')
+              
               </div>
             </div>
             <!-- /.box-body -->

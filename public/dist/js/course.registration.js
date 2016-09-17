@@ -64,6 +64,8 @@ function sendform(url,data){
         	      $('#infoModal').modal();
         	      selected ='';
                   $('#selected-courses').html('');
+                  $('#registered-courses').html(data.courses);
+
             }
 
            return;
