@@ -81,7 +81,9 @@ Route::get('/views/getcourses', 'DashboardController@getCoursesView');
 Route::get('/views/getdepartments', 'DashboardController@getDepartmentsView');
 Route::get('/views/getclasses', 'DashboardController@getClassesView');
 Route::get('/views/getteachers', 'DashboardController@getTeachersView');
+Route::get('/views/userinfo', 'DashboardController@getUserInfoView'); 
 Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed to be a post
+
 
 
 
@@ -101,6 +103,7 @@ Route::post('/courses/registration/drop', 'RegisteredCourseController@dropRegist
 Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 /*Teachers*/
 Route::post('/teachers/add', 'TeacherController@addNewTeacher');
+
 
 
 

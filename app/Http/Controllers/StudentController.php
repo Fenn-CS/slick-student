@@ -18,7 +18,7 @@ class StudentController extends Controller
     	$name = $request['name'];
     	$nid = $request['nid'];
     	$email = $request['email'];
-    	$birthdate = $request['birthdate'];
+        $birthdate = $this->str_to_date($request['birthdate']);
     	$birthplace = $request['birthplace'];
     	$program = $request['program'];
     	$phone = $request['number'];
@@ -95,6 +95,12 @@ class StudentController extends Controller
       $students=User::where('personality','Student')->orderBy('created_at', 'desc')->paginate(50);
       return $students;
     }
+    private function str_to_date($str)
+    {
+
+     $date_arr = explode('-', str_replace("/","-",$str));
+     return $date_arr[2].'-'.$date_arr[1].'-'.$date_arr[0];
+   }
 
 
 

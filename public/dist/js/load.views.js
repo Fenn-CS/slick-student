@@ -112,6 +112,13 @@ $('body').on('click','#form-viewteachers', function(event){
 
 });
 
+$('body').on('click','#form-viewuserinfo', function(event){
+	event.preventDefault();
+	url = base+'/views/userinfo';
+    getView(url);
+
+});
+
 
 
 

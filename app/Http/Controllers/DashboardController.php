@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use App\Http\Requests;
 use App\User;
 use App\Student;
+use App\Teacher;
 use App\Department;
 use App\Program;
 use App\RegisteredCourse;
@@ -60,12 +62,37 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
 return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('pages.viewscores')->render()];       
 
     }
+    public function getUserInfoView(Request $request)
+    {
+       $user = User::find($request->user()->id);
+       $model = '';
+       if($user->personality=='Student')
+       {
+          $student = Student::where('user_id', $request->user()->id)->first(); 
+          $model = $student;
+       } else if($user->personality=='Teacher')
+       {
+         $teacher = Teacher::where('user_id', $request->user()->id)->first();
+         $model = $teacher;
+       } else if($user->personality=='Admin')
+       {
+       
+       } else {}
+
+ return ['title'=>'<h1>My Personal Info<small>Control Panel</small><h1>','content'=>view('pages.userinfo',['user'=>$user,'model'=>$model])->render()];  
+    }
 
     public function getRegisterCoursesView(Request $request)
     {
-      $controller = new CourseController();
+      $user = User::find($request->user()->id);
+      if($user->personality=='Student') 
+      {
+       $controller = new CourseController();
       $student = Student::where('user_id', $request->user()->id)->first();
       return ['title'=>'<h1>Course Registration <small>Control Panel</small><h1>','content'=>view('pages.registercourses', ['courses'=>$controller->getRegisteredCourses($student->id)])->render()];
+      }
+      return ['title'=>'<h1>Course registration view for admins not available yet<small>Control Panel</small><h1>','content'=>'Working on views!'];
+      
     }
     public function test(Request $request){
       //Test to create department
