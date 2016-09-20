@@ -45,7 +45,7 @@ class DepartmentController extends Controller
 
 
 
-      return ['success'=>true,'message'=>'Department '.$name.' Registered Sucessfully','reset'=>'#form-addcourse'];
+      return ['success'=>true,'message'=>'Department '.$name.' Registered Sucessfully','reset'=>'#form-adddepartment'];
     }
 
 

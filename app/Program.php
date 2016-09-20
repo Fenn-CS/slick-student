@@ -15,4 +15,8 @@ class Program extends Model
     {
     return $this->hasMany('App\Course');
     }
+    public function classes()
+    {
+    return $this->hasMany('App\Class');
+    }
 }

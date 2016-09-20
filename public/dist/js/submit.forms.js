@@ -42,6 +42,22 @@ $('body').on('click', '#add-program', function(event){
  $('#program-title').val('');
 	}
 });
+$('body').on('click', '#save-new-class', function(event){
+  event.preventDefault();
+  var data= $('#form-add-class').serialize();
+  var url = base+'/classes/add';
+  sendform(url, data, event);
+
+});
+
+
+
+$('body').on('change', '#classprogram', function(event){
+nameclass();
+});
+$('body').on('change', '#classlevel', function(event){
+nameclass();
+});
 
 
 
@@ -60,7 +76,7 @@ function sendform(url,data, event){
      	type: "POST",
      	data:data,
      	success:function(data){
-     	$(event.target).attr("disabled", true);
+     	$(event.target).attr("disabled", false);
         if(data.success){
             // $('.infoMsg').html(data.message);
         	// $('#infoModal').modal();
@@ -90,11 +106,18 @@ function sendform(url,data, event){
 
 }
 
- function addprogram(name){
+ function addprogram(name)
+ {
 
  	$('#program-list').append('<li>'+name+'</li>');
  	$('#programs').val($('#programs').val() +','+name);
 
  }
+
+function nameclass()
+{
+if($('#classlevel').val()!='Select'&&$('#classprogram').val()!='Select')
+$('#classname').val('LEVEL '+$('#classlevel').val()+' '+$('#classprogram').val());
+}
 
 });

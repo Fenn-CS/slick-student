@@ -19,22 +19,21 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label >Max Teachers</label>
-                  <select class="form-control" name="creditvalue">
-                  <option>1</option>
-                   <option>2</option>
-                    <option>3</option>
-                     <option>4</option>
+                  <label>Class</label>
+                  <select class="form-control" name="class">
+                  <option>LEVEL 300 TELECOM</option>
+                   
                   </select>
                 </div>
                
                 <div class="form-group">
                   <label >Assign Teacher</label>
-                  <select class="form-control" name="creditvalue">
+                  <select class="form-control" name="teacher">
                     @foreach($teachers as $teacher)
                 <option> {{$teacher->name}} </option>
                 @endforeach
                   </select>
+                  <input type="hidden" name="teacherid" value="">
                 </div>
                
                

@@ -2,50 +2,48 @@
           <!-- general form elements -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Add to departments.</h3>
+              <h3 class="box-title">Add to classes.</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form id="form-add-class">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="code">Department Name</label>
-                  <input type="text" class="form-control" id="code" placeholder="LEVEL 200 Computer" name="code">
+                  <label for="classname">Class Name</label>
+                  <input type="text" class="form-control" id="classname" placeholder="LEVEL 200 Computer Software" name="name" readonly>
                 </div>
                 <div class="form-group">
-                  <label for="title">Compulsory Courses</label>
+                  <label for="level">Level</label>
               
-                  <select class="form-control" name="creditvalue">
-                  <option>CEC213</option>
-                   <option>EEC206</option>
-                    <option>CVE100</option>
-                     <option>ENG101</option>
+                  <select class="form-control" name="level" id="classlevel">
+                  <option>Select</option>
+                  <option>200</option>
+                   <option>300</option>
+                    <option>400</option>
+                     <option>450</option>
                   </select>
                 
-                  <button class="col-md-2">Add</button>
                 </div>
-                <div class="box" style="margin-top:70px;">
-                  <ul class="" >
-                  <li>EEC206</li>
-
-               </ul>
-               </div>
-                <!-- <div class="form-group">
-                  <label >Head of Department</label>
-                  <select class="form-control" name="creditvalue">
-                  <option>MR XXX</option>
-                   <option>MR YYY</option>
-                    <option>MRS ZZZ</option>
-                     <option>MR KKK</option>
-                  </select>
-                </div> -->
+                <div class="form-group">
+                  <label for="program">Program</label>
               
+                  <select class="form-control" name="program" id="classprogram">
+                  <option>Select</option>
+                  @foreach($programs as $program)
+                  <option>{{$program->name}}</option>
+                  @endforeach
+                 <!-- -->
+                  </select>
+                
+                </div>
+            
                
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-slick">Validate</button>
+              <input type="hidden" name="_token" value="{{Session::token()}}">
+                <button type="submit" class="btn btn-lg btn-slick col-md-offset-4 col-md-4" id="save-new-class">Validate</button>
               </div>
             </form>
           </div>

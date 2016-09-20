@@ -51,7 +51,8 @@ Route::get('/views/assigncourse', function(){
 });
 
 Route::get('/views/addclass', function(){
-	return ['title'=>'<h1>Add Class<small>Control Panel</small><h1>','content'=>view('pages.addclass')->render()];
+	    $programs = Program::all();
+	return ['title'=>'<h1>Add Class<small>Control Panel</small><h1>','content'=>view('pages.addclass',['programs'=>$programs])->render()];
 });
 
 Route::get('/views/addscoresprompt', function(){
@@ -103,6 +104,8 @@ Route::post('/courses/registration/drop', 'RegisteredCourseController@dropRegist
 Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 /*Teachers*/
 Route::post('/teachers/add', 'TeacherController@addNewTeacher');
+/*Classes */
+Route::post('/classes/add', 'ClassController@addNewClass');
 
 
 
