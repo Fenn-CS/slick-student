@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Class;
+use App\ProgramClass;
 use App\Program;
 use App\Course;
 
-class ClassController extends Controller
+class ProgramClassController extends Controller
 {
     //
     public function addNewClass(Request $request)
@@ -19,7 +19,7 @@ class ClassController extends Controller
     	$problems ='<ul><li>Select a level and department in order to complete name field</li></ul>';
  return ['success'=>false,'message'=>'The new class cannot be registered without an auto generated name. <br><br>'.$problems];
     }
-        $class = new Class();
+        $class = new ProgramClass();
         $class->name = $name;
         $class->level = $request['level'];
         $program = Program::where('name', $request['program'])->first();
@@ -30,7 +30,7 @@ class ClassController extends Controller
 
         }catch(\Illuminate\Database\QueryException $ex){ 
 
-          return ['success'=>false,'message'=>'An unexpected error occured '.$ex->getMessage()];
+          return ['success'=>false,'message'=>'An unexpected error occured, the class you are trying to register might be registered already '];
         }
         
     	

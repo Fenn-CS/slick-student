@@ -17,6 +17,6 @@ class Program extends Model
     }
     public function classes()
     {
-    return $this->hasMany('App\Class');
+    return $this->hasMany('App\ProgramClass');
     }
 }

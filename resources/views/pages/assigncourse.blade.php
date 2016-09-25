@@ -21,7 +21,9 @@
                 <div class="form-group">
                   <label>Class</label>
                   <select class="form-control" name="class">
-                  <option>LEVEL 300 TELECOM</option>
+                  @foreach($classes as $class)
+                    <option>{{$class->name}}</option>
+                  @endforeach
                    
                   </select>
                 </div>

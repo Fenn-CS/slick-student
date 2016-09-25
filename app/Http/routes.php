@@ -5,7 +5,7 @@ use App\User;
 use App\Department;
 use App\Program;
 use App\Course;
-
+use App\ProgramClass;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +47,8 @@ Route::get('/views/addcourse', function(){
 Route::get('/views/assigncourse', function(){
 	$teachers = User::where('personality','Teacher')->get();
 	$courses  = Course::all();
-	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse',['teachers'=>$teachers,'courses'=>$courses])->render()];
+	$classes  = ProgramClass::all();
+	return ['title'=>'<h1>Assign Courses <small>Control Panel</small><h1>','content'=>view('pages.assigncourse',['teachers'=>$teachers,'courses'=>$courses, 'classes'=>$classes])->render()];
 });
 
 Route::get('/views/addclass', function(){
@@ -105,7 +106,7 @@ Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 /*Teachers*/
 Route::post('/teachers/add', 'TeacherController@addNewTeacher');
 /*Classes */
-Route::post('/classes/add', 'ClassController@addNewClass');
+Route::post('/classes/add', 'ProgramClassController@addNewClass');
 
 
 
