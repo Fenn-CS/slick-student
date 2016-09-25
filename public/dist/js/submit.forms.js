@@ -50,6 +50,16 @@ $('body').on('click', '#save-new-class', function(event){
 
 });
 
+$('body').on('click', '#save-course-assignment', function(event){
+  event.preventDefault();
+  var data= $('#form-course-assignment').serialize();
+  var url = base+'/courses/assignments/add';
+  sendform(url, data, event);
+
+});
+
+
+
 
 
 $('body').on('change', '#classprogram', function(event){
@@ -58,6 +68,7 @@ nameclass();
 $('body').on('change', '#classlevel', function(event){
 nameclass();
 });
+
 
 
 

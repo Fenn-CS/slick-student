@@ -10,35 +10,26 @@
                 <tr>
                   <th>#</th>
                   <th>Class Name</th>
-                  <th>Compulsory Courses</th>
-                 <th>Actions</th>
+                  <th>Program</th>
+                  <th>Level</th>
+                  <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($classes as $class)
                 <tr>
-                  <td>Trident</td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
+                <td>#</td>
+                  <td>{{$class->name}}</td>
+                  <td>{{$class->program}}</td>
+                  <td>{{$class->level}}</td>
                   <td>
                   <a class="actions"><i class="fa fa-edit"></i></a>
                   <a class="actions"><i class="fa fa-trash-o"></i></a>
                   </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  
-                  <td>Win 95+</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                
-                  <td>Win 95+</td>
-  
-                  <td>A</td>
-                </tr>
-               
-               
+                @endforeach
+               </tbody>
+                <tfoot>
                 </tfoot>
               </table>
             </div>

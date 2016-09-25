@@ -12,6 +12,7 @@ use App\Teacher;
 use App\Department;
 use App\Program;
 use App\RegisteredCourse;
+use App\ProgramClass;
 class DashboardController extends Controller
 {
     /**
@@ -49,7 +50,8 @@ return ['title'=>'<h1>View Departments <small>Control Panel</small><h1>','conten
     }
     public function getClassesView()
     {
-return ['title'=>'<h1>View Classes <small>Control Panel</small><h1>','content'=>view('pages.viewclasses')->render()];
+      $classes = ProgramClass::all();
+return ['title'=>'<h1>View Classes <small>Control Panel</small><h1>','content'=>view('pages.viewclasses',['classes'=>$classes])->render()];
     }
     public function getTeachersView()
     {

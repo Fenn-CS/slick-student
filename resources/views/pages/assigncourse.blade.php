@@ -6,12 +6,12 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form id="form-course-assignment">
               <div class="box-body">
 
               <div class="form-group">
                   <label >Course Code</label>
-                  <select class="form-control" name="creditvalue">
+                  <select class="form-control" name="course">
                     @foreach($courses as $course)
                     <option>{{$course->code}}</option>
                     @endforeach
@@ -30,12 +30,12 @@
                
                 <div class="form-group">
                   <label >Assign Teacher</label>
-                  <select class="form-control" name="teacher">
+                  <select class="form-control"  name="teacher">
                     @foreach($teachers as $teacher)
                 <option> {{$teacher->name}} </option>
                 @endforeach
                   </select>
-                  <input type="hidden" name="teacherid" value="">
+                
                 </div>
                
                
@@ -43,7 +43,8 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-slick">Validate</button>
+                <input type="hidden" name="_token" value="{{Session::token()}}">
+                <button type="submit" class="btn btn-slick" id="save-course-assignment">Validate</button>
               </div>
             </form>
           </div>
