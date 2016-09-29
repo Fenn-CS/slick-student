@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form id="form-prompt-score-registration">
               <div class="box-body">
                 <div class="form-group">
                   <label for="code">Semester</label>
@@ -53,6 +53,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
+              <input type="hidden" name="_token" value="{{Session::token()}}">
                 <button  class="btn btn-slick" id="{{$id}}">Validate</button>
               </div>
             </form>

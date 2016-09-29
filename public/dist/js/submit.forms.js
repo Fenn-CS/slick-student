@@ -13,7 +13,7 @@ $('body').on('click', '#register-student', function(event){
 
 $('body').on('click', '#save-new-course', function(event){
   event.preventDefault();
-  var data= $('#form-add-course').serialize();
+  var data = $('#form-add-course').serialize();
   var url = base+'/courses/add';
  sendform(url, data, event);
 
@@ -60,23 +60,12 @@ $('body').on('click', '#save-course-assignment', function(event){
 
 
 
-
-
 $('body').on('change', '#classprogram', function(event){
 nameclass();
 });
 $('body').on('change', '#classlevel', function(event){
 nameclass();
 });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -90,16 +79,16 @@ function sendform(url,data, event){
      	$(event.target).attr("disabled", false);
         if(data.success){
             // $('.infoMsg').html(data.message);
-        	// $('#infoModal').modal();
+        	  // $('#infoModal').modal();
         	 $('#floating-alert').html('<h4>'+data.message+'</h4>');
         	 $("#floating-alert").show().delay(5000).fadeOut();
-        	$(data.reset).trigger('click');
+        	 $(data.reset).trigger('click');
 
            return;
 
         } else {
                  $('.infoMsg').html(data.message);
-        	     $('#infoModal').modal();
+        	       $('#infoModal').modal();
                }
       },
       

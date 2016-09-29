@@ -56,8 +56,9 @@ $('body').on('click','#form-viewscoresprompt', function(event){
 //supposed to be a post
 $('body').on('click','#form-addscores', function(event){
 	event.preventDefault();
-	url = base+'/views/addscores';
-    getView(url);
+	url = base+'/views/scores/prompt/input';
+	var data= $('#form-prompt-score-registration').serialize();
+    submitAndGetView(data, url);
 
 });
 //supposed to be a post
@@ -154,5 +155,29 @@ $('body').on('click','#form-viewcourseassigns', function(event){
               }
          });
 }
+
+   function submitAndGetView(data, url){
+
+     $.ajax({
+     	url:url,
+     	type: "POST",
+     	data:data,
+     	success:function(data){
+        $('.content-header').html(data.title);
+        $('.content').html(data.content);
+      },
+      
+      error:function(xhr, status, error) {
+               //Error msg for Developers
+               $('body').html('');
+               $('body').prepend(xhr.responseText);
+               $('body').append('XHR :'+xhr);
+               $('body').append('STATUS :'+status);
+               $('body').append('ERROR :'+error);
+             
+              
+              }
+         });
+   }
 
 });

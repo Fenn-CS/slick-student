@@ -65,12 +65,6 @@ Route::get('/views/viewscoresprompt', function(){
 	return ['title'=>'<h1>View Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-viewscores'])->render()];
 });
 
-//This is supposed to be a post request
-Route::get('/views/addscores', function(){
-	return ['title'=>'<h1>View Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.addscores')->render()];
-});
-
-
 
 Route::get('/views/adddepartment', function(){
 	return ['title'=>'<h1>Add Departments <small>Control Panel</small><h1>','content'=>view('pages.adddepartment')->render()];
@@ -88,6 +82,9 @@ Route::get('/views/getteachers', 'DashboardController@getTeachersView');
 Route::get('/views/getteacherassigns', 'DashboardController@getTeacherAssignments');
 Route::get('/views/userinfo', 'DashboardController@getUserInfoView'); 
 Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed to be a post
+/**** POST REQUEST THAT RETURN FORM VIEWS ****/
+/*Scores*/
+Route::post('/views/scores/prompt/input', 'ScoreController@requestScoreRegistration');
 
 
 
@@ -104,14 +101,15 @@ Route::post('/courses/registration/get', 'CourseController@getAvailableCourses')
 Route::post('/courses/registration/save', 'CourseController@saveRegisteredCourses');
 //Delete a registered course
 Route::post('/courses/registration/drop', 'RegisteredCourseController@dropRegisteredCourse');
-/*CourseAssignments */
+/*CourseAssignments*/
 Route::post('courses/assignments/add', 'CourseAssignmentController@addNewCourseAssignment');
 /*Departments*/
 Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 /*Teachers*/
 Route::post('/teachers/add', 'TeacherController@addNewTeacher');
-/*Classes */
+/*Classes*/
 Route::post('/classes/add', 'ProgramClassController@addNewClass');
+
 
 
 
