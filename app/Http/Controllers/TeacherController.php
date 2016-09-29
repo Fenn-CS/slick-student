@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Teacher;
+use App\CourseAssignment;
 
 class TeacherController extends Controller
 {
@@ -80,5 +81,11 @@ class TeacherController extends Controller
     {
         $teachers = User::where('personality','Teacher')->orderBy('created_at', 'desc')->paginate(50);
         return $teachers;
+    }
+
+    public function getTeacherCourses()
+    {
+        $courseAssigments = CourseAssignment::all();
+        return $courseAssigments;
     }
 }

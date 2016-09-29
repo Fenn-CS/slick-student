@@ -30,6 +30,7 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/dashboard';
     protected $username = 'reg_number';
+    protected $loginPath = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -70,5 +71,14 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm()
+    {
+    return redirect('/');
+    }
+    public function showLoginForm()
+    {
+    return redirect('/');
     }
 }

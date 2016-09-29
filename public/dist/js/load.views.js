@@ -118,6 +118,12 @@ $('body').on('click','#form-viewuserinfo', function(event){
     getView(url);
 
 });
+$('body').on('click','#form-viewcourseassigns', function(event){
+	event.preventDefault();
+	url = base+'/views/getteacherassigns';
+    getView(url);
+
+});
 
 
 

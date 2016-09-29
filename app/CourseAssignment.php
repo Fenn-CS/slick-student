@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CourseAssignment extends Model
 {
     //
-    public teacher()
+    public function teacher()
     {
      return $this->belongsTo('App\Teacher');
     }

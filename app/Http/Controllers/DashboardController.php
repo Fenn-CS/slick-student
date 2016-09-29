@@ -96,6 +96,11 @@ return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('
       return ['title'=>'<h1>Course registration view for admins not available yet<small>Control Panel</small><h1>','content'=>'Working on views!'];
       
     }
+    public function getTeacherAssignments()
+    {
+      $controller = new TeacherController();
+      return ['title'=>'<h1>Course Registration <small>Control Panel</small><h1>','content'=>view('pages.viewcourseassigments', ['assignments'=>$controller->getTeacherCourses()])->render()];
+    }
     public function test(Request $request){
       //Test to create department
       // $dept = new Department();

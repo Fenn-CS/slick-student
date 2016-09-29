@@ -20,7 +20,9 @@
                   <label for="title">Course</label>
               
                   <select class="form-control" name="creditvalue">
-                  <option>CEC213</option>
+                  @foreach($courses as $course)
+                  <option>{{$course->title}}</option>
+                  @endforeach
                    <option>EEC206</option>
                     <option>CVE100</option>
                      <option>ENG101</option>
@@ -37,15 +39,14 @@
            
                 </div>
               
-                <!-- <div class="form-group">
-                  <label >Head of Department</label>
+                <div class="form-group">
+                  <label >Class</label>
                   <select class="form-control" name="creditvalue">
-                  <option>MR XXX</option>
-                   <option>MR YYY</option>
-                    <option>MRS ZZZ</option>
-                     <option>MR KKK</option>
+                  @foreach($classes as $class)
+                  <option>{{$class->name}}</option>
+                  @endforeach
                   </select>
-                </div> -->
+                </div>
               
                
               </div>

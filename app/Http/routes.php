@@ -57,7 +57,9 @@ Route::get('/views/addclass', function(){
 });
 
 Route::get('/views/addscoresprompt', function(){
-	return ['title'=>'<h1>Add Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-addscores'])->render()];
+	$courses  = Course::all();
+	$classes  = ProgramClass::all();
+	return ['title'=>'<h1>Add Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-addscores','courses'=>$courses,'classes'=>$classes])->render()];
 });
 Route::get('/views/viewscoresprompt', function(){
 	return ['title'=>'<h1>View Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-viewscores'])->render()];
@@ -83,6 +85,7 @@ Route::get('/views/getcourses', 'DashboardController@getCoursesView');
 Route::get('/views/getdepartments', 'DashboardController@getDepartmentsView');
 Route::get('/views/getclasses', 'DashboardController@getClassesView');
 Route::get('/views/getteachers', 'DashboardController@getTeachersView');
+Route::get('/views/getteacherassigns', 'DashboardController@getTeacherAssignments');
 Route::get('/views/userinfo', 'DashboardController@getUserInfoView'); 
 Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed to be a post
 

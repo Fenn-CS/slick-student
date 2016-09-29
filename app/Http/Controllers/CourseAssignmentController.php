@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\AssignedCourse;
 use App\Course;
 use App\User;
 use App\ProgramClass;
+use App\CourseAssignment;
 
 class CourseAssignmentController extends Controller
 {
@@ -26,14 +26,20 @@ class CourseAssignmentController extends Controller
        }
 
        $course = Course::where('code',$course_code)->first();
-       $teaher = User::where('name', $teacher)->where('personality', 'Teacher')->first();
+       $teacher = User::where('name', $teacher)->where('personality', 'Teacher')->first();
+       $teacher = $teacher->teacher()->first();
        $class  = ProgramClass::where('name', $class)->first();
 
     	try {
+
+    		$courseAssignment = new CourseAssignment();
+    		$courseAssignment->course = $course->id;
+    		$courseAssignment->class = $class->id;
+    		$teacher->courses()->save($courseAssignment);
     		
     	} catch (\Illuminate\Database\QueryException $ex) {
 
-    		 return ['success'=>false,'message'=>'An unexpected error occured, the class you are trying to register might be registered already '];
+    		 return ['success'=>false,'message'=>'An unexpected error occured, the class you are trying to register might be registered already '.$ex->getMessage()];
     	}
 
     	return ['success'=>true,'message'=>$course->title.' for '.$class->name.' successfully assigned to '.$request['teacher'],'reset'=>'#form-assigncourse'];
