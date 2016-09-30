@@ -90,6 +90,7 @@ Route::get('/views/viewscoresprompt', 'ScoreController@showViewScoresPromptForm'
 //POST
 Route::post('/views/scores/prompt/input', 'ScoreController@requestScoreRegistration');
 Route::post('/views/getscores', 'DashboardController@getScoresView');
+Route::post('/scores/addscore', 'ScoreController@addScore');
 
 
 

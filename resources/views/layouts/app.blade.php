@@ -47,7 +47,7 @@
      <input type="hidden" value="{{Session::token()}}" id="token">
 
     <!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -55,10 +55,10 @@
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
+<script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
+
 <!-- Sparkline -->
 <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -78,18 +78,20 @@
 <!-- FastClick -->
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
+<script src="{{asset('dist/js/app.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- LoadViews for loading of ajax views -->
-<script src="dist/js/load.views.js"></script>
-<script src="dist/js/submit.forms.js"></script>
-<script src="dist/js/course.registration.js"></script>
+<script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
+<!-- Custom JS files,load views-forms and operations -->
+<script src="{{asset('dist/js/load.views.js')}}"></script>
+<script src="{{asset('dist/js/submit.forms.js')}}"></script>
+<script src="{{asset('dist/js/course.registration.js')}}"></script>
+<script src="{{asset('dist/js/upload.scores.js')}}"></script>
+
+
+
 <!--Input Mask -->
-<script src="plugins/input-mask/jquery.inputmask.js"></script>
-<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<script src="{{asset('plugins/input-mask/jquery.inputmask.js')}}"></script>
+<script src="{{asset('plugins/input-mask/jquery.inputmask.date.extensions.js')}}"></script>
+<script src="{{asset('plugins/input-mask/jquery.inputmask.extensions.js')}}"></script>
 </body>
 </html>

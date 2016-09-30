@@ -20,6 +20,12 @@ class ScoreController extends Controller
      $course = $request['course'];
      $type = $request['type'];
      $semester = $request['semester'];
+     if($semester=='1st Semester')
+     {
+     $semester =1;
+     } else{
+          $semester =2;
+           }
      $class = $request['class'];
      $course = Course::where('code', $course)->first();
      $registered_students = RegisteredCourse::where('course', $course->id)->get(); //In Future classes may be included
@@ -27,7 +33,6 @@ class ScoreController extends Controller
      foreach ($registered_students as $registered_student) {
      $student = Student::find($registered_student->student_id);
      $user = User::find($student->user_id);
-
      $students[] = (object) ['id'=>$student->id,'matricule'=>$user->reg_number,'name'=>$user->name];
      }
       
@@ -35,12 +40,12 @@ class ScoreController extends Controller
 
      	return ['title'=>'<h1>You dont have any courses to manage<small>Control Panel</small><h1>','content'=>'You haven\'t been assigned any course and consquetly any class'];
      }
-      return ['title'=>'<h1>'.$course->title.' Score List<small>Control Panel</small><h1>','content'=>view('pages.addscores',['course_name'=>$course->title,'type'=>$type,'students'=>$students])->render()];
+      return ['title'=>'<h1>'.$course->title.' Score List<small>Control Panel</small><h1>','content'=>view('pages.addscores',['course_name'=>$course->title,'type'=>$type,'students'=>$students,'settings'=>$type.'-'.$semester])->render()];
     }
 
     public function addScore()
     {
-
+     return ['success'=>true];
     }
 
     public function showAddScoresPromptForm(Request $request)
@@ -57,7 +62,7 @@ class ScoreController extends Controller
     {
        
        $courses = array();
-       $classes =array(); 
+       $classes = array(); 
        $user = User::find($request->user()->id);
        if($user->personality==='Teacher')
        {

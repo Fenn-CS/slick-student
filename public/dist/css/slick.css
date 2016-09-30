@@ -3,6 +3,6 @@
  color:white;
 }
 
-li {
+li , a {
     cursor:pointer !important;
    }
