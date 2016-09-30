@@ -57,7 +57,7 @@ $('body').on('click','#form-viewscoresprompt', function(event){
 $('body').on('click','#form-addscores', function(event){
 	event.preventDefault();
 	url = base+'/views/scores/prompt/input';
-	var data= $('#form-prompt-score-registration').serialize();
+	var data= $('#form-score-prompt').serialize();
     submitAndGetView(data, url);
 
 });
@@ -65,7 +65,8 @@ $('body').on('click','#form-addscores', function(event){
 $('body').on('click','#form-viewscores', function(event){
 	event.preventDefault();
 	url = base+'/views/getscores';
-    getView(url);
+    var data= $('#form-score-prompt').serialize();
+    submitAndGetView(data, url);
 
 });
 

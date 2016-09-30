@@ -2,15 +2,15 @@
           <!-- general form elements -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Score prompt(Views/Registrations)</h3>
+              <h3 class="box-title">Score prompt(Addition/Retrieval)</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="form-prompt-score-registration">
+            <form id="form-score-prompt">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="code">Semester</label>
-                   <select class="form-control" name="creditvalue">
+                  <label for="semester">Semester</label>
+                   <select class="form-control" name="semester">
                   <option>1st Semester</option>
                    <option>2nd Semester</option>
                   
@@ -19,20 +19,17 @@
                 <div class="form-group">
                   <label for="title">Course</label>
               
-                  <select class="form-control" name="creditvalue">
+                  <select class="form-control" name="course">
                   @foreach($courses as $course)
                   <option>{{$course->title}}</option>
                   @endforeach
-                   <option>EEC206</option>
-                    <option>CVE100</option>
-                     <option>ENG101</option>
                   </select>
               
                 </div>
                  <div class="form-group">
                   <label for="title">Type</label>
               
-                  <select class="form-control" name="creditvalue">
+                  <select class="form-control" name="type">
                   <option>CA</option>
                   <option>EXAM</option>
                   </select>
@@ -41,7 +38,7 @@
               
                 <div class="form-group">
                   <label >Class</label>
-                  <select class="form-control" name="creditvalue">
+                  <select class="form-control" name="class">
                   @foreach($classes as $class)
                   <option>{{$class->name}}</option>
                   @endforeach

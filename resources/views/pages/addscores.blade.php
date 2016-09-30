@@ -1,7 +1,13 @@
   <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Mark Registrations for CEC213</h3>
+            <div class="box-header ">
+            <div class="col-md-6">
+              <h3 class="box-title">{{$type}} Mark Registrations for {{$course_name}}</h3> 
+            </div>
+              <div class="col-md-6">
+              <input type="file" name="" class="col-md-6"> 
+              <button class="btn btn-slick col-md-4" style="float:right;">Import scores</button>
+            </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

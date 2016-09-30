@@ -56,14 +56,14 @@ Route::get('/views/addclass', function(){
 	return ['title'=>'<h1>Add Class<small>Control Panel</small><h1>','content'=>view('pages.addclass',['programs'=>$programs])->render()];
 });
 
-Route::get('/views/addscoresprompt', function(){
-	$courses  = Course::all();
-	$classes  = ProgramClass::all();
-	return ['title'=>'<h1>Add Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-addscores','courses'=>$courses,'classes'=>$classes])->render()];
-});
-Route::get('/views/viewscoresprompt', function(){
-	return ['title'=>'<h1>View Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-viewscores'])->render()];
-});
+// Route::get('/views/addscoresprompt', function(){
+// 	$courses  = Course::all();
+// 	$classes  = ProgramClass::all();
+// 	return ['title'=>'<h1>Add Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-addscores','courses'=>$courses,'classes'=>$classes])->render()];
+// });
+// Route::get('/views/viewscoresprompt', function(){
+// 	return ['title'=>'<h1>View Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>'form-viewscores'])->render()];
+// });
 
 
 Route::get('/views/adddepartment', function(){
@@ -81,10 +81,16 @@ Route::get('/views/getclasses', 'DashboardController@getClassesView');
 Route::get('/views/getteachers', 'DashboardController@getTeachersView');
 Route::get('/views/getteacherassigns', 'DashboardController@getTeacherAssignments');
 Route::get('/views/userinfo', 'DashboardController@getUserInfoView'); 
-Route::get('/views/getscores', 'DashboardController@getScoresView'); //Supposed to be a post
+// Route::get('/views/getscores', 'DashboardController@getScoresView'); 
 /**** POST REQUEST THAT RETURN FORM VIEWS ****/
 /*Scores*/
+//GET
+Route::get('/views/addscoresprompt', 'ScoreController@showAddScoresPromptForm');
+Route::get('/views/viewscoresprompt', 'ScoreController@showViewScoresPromptForm');
+//POST
 Route::post('/views/scores/prompt/input', 'ScoreController@requestScoreRegistration');
+Route::post('/views/getscores', 'DashboardController@getScoresView');
+
 
 
 

@@ -59,9 +59,12 @@ return ['title'=>'<h1>View Classes <small>Control Panel</small><h1>','content'=>
 return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=>view('pages.viewteachers',['teachers'=>$controller->getTeachers()])->render()];       
 
     }
-    public function getScoresView()
+    public function getScoresView(Request $request)
     {
-return ['title'=>'<h1>Scores <small>Control Panel</small><h1>','content'=>view('pages.viewscores')->render()];       
+      $course = $request['course'];
+      $type = $request['type'];
+      $controller = new ScoreController();
+     return ['title'=>'<h1>'.$course.' '.$type.' Scores <small>Control Panel</small><h1>','content'=>view('pages.viewscores',['course'=>$course,'type'=>$type])->render()];       
 
     }
     public function getUserInfoView(Request $request)
