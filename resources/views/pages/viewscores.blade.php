@@ -39,8 +39,6 @@
                   <a class="actions"><i class="fa fa-edit"></i></a>
                   </td>
                 </tr>
-               
-               
                 </tfoot>
               </table>
             </div>

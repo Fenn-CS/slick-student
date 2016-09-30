@@ -1,3 +1,4 @@
+
   <div class="col-xs-12">
           <div class="box">
             <div class="box-header ">
@@ -21,32 +22,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>CT15A073</td>
-                  <td> TIKU AGBOROCK</td>
+                 @foreach($students as $student)
+                 <tr>
+                 <td>{{$student->matricule}}</td>
+                  <td>{{$student->name}}</td>
                   <td><input type="" name="" id="scoreXX"></td>
                   <td>
                   <a class="actions"><i class="fa fa-save"></i></a>
                   </td>
                 </tr>
-                <tr>
-                 <td>CT15A063</td>
-                  <td> MBELLA JOSEPH</td>
-                  <td><input type="" name="" id="scoreXX"></td>
-                  <td>
-                  <a class="actions"><i class="fa fa-save"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                 <td>CT15A055</td>
-                  <td> MUSA ALITUH</td>
-                  <td><input type="" name="" id="scoreXX"></td>
-                  <td>
-                  <a class="actions"><i class="fa fa-save"></i></a>
-                  </td>
-                </tr>
-               
-               
+                @endforeach
+                </tbody>
+                <tfoot>
                 </tfoot>
               </table>
             </div>

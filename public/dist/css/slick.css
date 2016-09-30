@@ -2,3 +2,7 @@
  background-color:#FF5555 !important;
  color:white;
 }
+
+li {
+    cursor:pointer !important;
+   }

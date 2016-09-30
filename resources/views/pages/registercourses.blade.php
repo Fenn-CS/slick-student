@@ -53,6 +53,23 @@
             </div>
             </div>
             <div class="col-md-3">
+            <div class="box box-solid">
+             <div class="box-header with-border">
+              <h4 class="box-title">Class(Group)</h4>
+              </div>
+              <div class="box-body">
+               <div class="form-group">
+             <select class="form-control" name="creditvalue" id="level-courses">
+                <option>...</option>
+                  <option>###</option>
+                   <option>###</option>
+                    <option>###</option>
+                  </select>
+                </div>
+              </div>
+           
+            </div>
+              
              <div class="box box-solid">
             <div class="box-header with-border">
               <h4 class="box-title">Color Code</h4>
@@ -63,7 +80,7 @@
                 <ul class="fc-color-picker" id="color-chooser">
                   <li><a class="text-red" href="#"><i class="fa fa-square"></i>Compulsory</a></li>
                   <li><a class="text-green" href="#"><i class="fa fa-square"></i>Elective</a></li>
-                    <li><a class="text-yellow" href="#"><i class="fa fa-square"></i>Reciet</a></li>
+                    <li><a class="text-yellow" href="#"><i class="fa fa-square"></i>Resit</a></li>
                 
                 </ul>
               </div>

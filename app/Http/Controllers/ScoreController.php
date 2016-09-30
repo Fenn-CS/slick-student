@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Student;
 use App\CourseAssignment;
 use App\Course;
 use App\ProgramClass;
+use App\RegisteredCourse;
 
 class ScoreController extends Controller
 {
@@ -19,12 +21,21 @@ class ScoreController extends Controller
      $type = $request['type'];
      $semester = $request['semester'];
      $class = $request['class'];
+     $course = Course::where('code', $course)->first();
+     $registered_students = RegisteredCourse::where('course', $course->id)->get(); //In Future classes may be included
+     $students = array();
+     foreach ($registered_students as $registered_student) {
+     $student = Student::find($registered_student->student_id);
+     $user = User::find($student->user_id);
 
-     if($course===''){
-     	
+     $students[] = (object) ['id'=>$student->id,'matricule'=>$user->reg_number,'name'=>$user->name];
+     }
+      
+     if($course==''){
+
      	return ['title'=>'<h1>You dont have any courses to manage<small>Control Panel</small><h1>','content'=>'You haven\'t been assigned any course and consquetly any class'];
      }
-      return ['title'=>'<h1>'.$course.' Score List<small>Control Panel</small><h1>','content'=>view('pages.addscores',['course_name'=>$course,'type'=>$type])->render()];
+      return ['title'=>'<h1>'.$course->title.' Score List<small>Control Panel</small><h1>','content'=>view('pages.addscores',['course_name'=>$course->title,'type'=>$type,'students'=>$students])->render()];
     }
 
     public function addScore()

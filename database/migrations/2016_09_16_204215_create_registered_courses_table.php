@@ -16,6 +16,7 @@ class CreateRegisteredCoursesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('student_id');
             $table->unsignedInteger('course');
+            $table->unsignedInteger('class');
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->timestamps();
         });

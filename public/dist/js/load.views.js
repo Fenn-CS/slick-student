@@ -5,51 +5,51 @@ $(document).ready(function(){
 $('body').on('click','#form-addstudent', function(event){
 	event.preventDefault();
 	url = base+'/views/addstudent';
-    getView(url);
+    getView(url, event);
 
 });
 $('body').on('click','#form-addcourse', function(event){
 	event.preventDefault();
 	url = base+'/views/addcourse';
-    getView(url);
+    getView(url, event);
 
 });
 $('body').on('click','#form-assigncourse', function(event){
 	event.preventDefault();
 	url = base+'/views/assigncourse';
-    getView(url);
+    getView(url, event);
 
 });
 
 $('body').on('click','#form-adddepartment', function(event){
 	event.preventDefault();
 	url = base+'/views/adddepartment';
-    getView(url);
+    getView(url, event);
 
 });
 $('body').on('click','#form-addclass', function(event){
 	event.preventDefault();
 	url = base+'/views/addclass';
-    getView(url);
+    getView(url, event);
 
 });
 
 $('body').on('click','#form-addteacher', function(event){
 	event.preventDefault();
 	url = base+'/views/addteacher';
-    getView(url);
+    getView(url, event);
 
 });
 $('body').on('click','#form-addscoresprompt', function(event){
 	event.preventDefault();
 	url = base+'/views/addscoresprompt';
-    getView(url);
+    getView(url, event);
 
 });
 $('body').on('click','#form-viewscoresprompt', function(event){
 	event.preventDefault();
 	url = base+'/views/viewscoresprompt';
-    getView(url);
+    getView(url, event);
 
 });
 
@@ -58,7 +58,7 @@ $('body').on('click','#form-addscores', function(event){
 	event.preventDefault();
 	url = base+'/views/scores/prompt/input';
 	var data= $('#form-score-prompt').serialize();
-    submitAndGetView(data, url);
+    submitAndGetView(data, url,event);
 
 });
 //supposed to be a post
@@ -66,7 +66,7 @@ $('body').on('click','#form-viewscores', function(event){
 	event.preventDefault();
 	url = base+'/views/getscores';
     var data= $('#form-score-prompt').serialize();
-    submitAndGetView(data, url);
+    submitAndGetView(data, url, event);
 
 });
 
@@ -74,7 +74,7 @@ $('body').on('click','#form-viewscores', function(event){
 $('body').on('click','#form-registercourses', function(event){
 	event.preventDefault();
 	url = base+'/views/registercourses';
-    getView(url);
+    getView(url, event);
 
 });
 
@@ -82,7 +82,7 @@ $('body').on('click','#form-registercourses', function(event){
 $('body').on('click','#form-viewstudents', function(event){
 	event.preventDefault();
 	url = base+'/views/getstudents';
-    getView(url);
+    getView(url, event);
 
 });
 
@@ -90,40 +90,40 @@ $('body').on('click','#form-viewstudents', function(event){
 $('body').on('click','#form-viewcourses', function(event){
 	event.preventDefault();
 	url = base+'/views/getcourses';
-    getView(url);
+    getView(url, event);
 
 });
 $('body').on('click','#form-viewdepartments', function(event){
 	event.preventDefault();
 	url = base+'/views/getdepartments';
-    getView(url);
+    getView(url, event);
 
 });
 
 $('body').on('click','#form-viewclasses', function(event){
 	event.preventDefault();
 	url = base+'/views/getclasses';
-    getView(url);
+    getView(url, event);
 
 });
 
 $('body').on('click','#form-viewteachers', function(event){
 	event.preventDefault();
 	url = base+'/views/getteachers';
-    getView(url);
+    getView(url, event);
 
 });
 
 $('body').on('click','#form-viewuserinfo', function(event){
 	event.preventDefault();
 	url = base+'/views/userinfo';
-    getView(url);
+    getView(url, event);
 
 });
 $('body').on('click','#form-viewcourseassigns', function(event){
 	event.preventDefault();
 	url = base+'/views/getteacherassigns';
-    getView(url);
+    getView(url, event);
 
 });
 
@@ -134,12 +134,14 @@ $('body').on('click','#form-viewcourseassigns', function(event){
 
 
 
-	function getView(url){
+	function getView(url, event){
+	$(event.target).attr("disabled", true);
 	 $.ajax({
      	url:url,
      	type: "GET",
      	data:{},
      	success:function(data){
+     	$(event.target).attr("disabled", false);
         $('.content-header').html(data.title);
         $('.content').html(data.content);
       },
@@ -157,13 +159,14 @@ $('body').on('click','#form-viewcourseassigns', function(event){
          });
 }
 
-   function submitAndGetView(data, url){
-
+   function submitAndGetView(data, url, event){
+    $(event.target).attr("disabled", true);
      $.ajax({
      	url:url,
      	type: "POST",
      	data:data,
      	success:function(data){
+     	$(event.target).attr("disabled", false);
         $('.content-header').html(data.title);
         $('.content').html(data.content);
       },
