@@ -29,7 +29,13 @@ class CourseAssignmentController extends Controller
        $teacher = User::where('name', $teacher)->where('personality', 'Teacher')->first();
        $teacher = $teacher->teacher()->first();
        $class  = ProgramClass::where('name', $class)->first();
-
+       $existing = CourseAssignment::where('teacher_id', $teacher->id)->where('course', $course->id)->where('class',$class->id)->first();
+       
+       if($existing instanceof CourseAssignment)
+       {
+         return ['success'=>true,'message'=>$course->title.' for '.$class->name.' had already been assigned to '.$request['teacher'],'reset'=>'#form-assigncourse'];
+       }
+       
     	try {
 
     		$courseAssignment = new CourseAssignment();
