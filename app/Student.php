@@ -16,4 +16,9 @@ class Student extends Model
     {
     	return $this->hasMany('App\RegisteredCourse');
     }
+
+    public function scores()
+    {
+    	return $this->hasMany('App\Score');
+    }
 }

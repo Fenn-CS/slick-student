@@ -11,6 +11,7 @@ use App\CourseAssignment;
 use App\Course;
 use App\ProgramClass;
 use App\RegisteredCourse;
+use App\Score;
 
 class ScoreController extends Controller
 {
@@ -40,11 +41,40 @@ class ScoreController extends Controller
 
      	return ['title'=>'<h1>You dont have any courses to manage<small>Control Panel</small><h1>','content'=>'You haven\'t been assigned any course and consquetly any class'];
      }
-      return ['title'=>'<h1>'.$course->title.' Score List<small>Control Panel</small><h1>','content'=>view('pages.addscores',['course_name'=>$course->title,'type'=>$type,'students'=>$students,'settings'=>$type.'-'.$semester])->render()];
+      return ['title'=>'<h1>'.$course->title.' Score List<small>Control Panel</small><h1>','content'=>view('pages.addscores',['course_name'=>$course->title,'type'=>$type,'students'=>$students,'settings'=>$type.'-'.$semester.'-'.$course->id])->render()];
     }
 
-    public function addScore()
+    public function addScore(Request $request)
     {
+     $student_id = $request['id'];
+     $student_matricule = $request['matricule'];
+     $score_type = $request['type'];
+     $score_semester = $request['semester'];
+     $value = $request['score'];
+     $course = $request['course'];
+     $student = Student::find($student_id);
+     $user = User::where('reg_number', $student_matricule)->first();
+     $proposed_student = $user->student()->first();
+     //Security Checks
+     if(!$this->compareStudents($student, $proposed_student))
+     return ['success'=>false, 'message'=>'There\'s and inregularity with information concerning '.$student_matricule];
+
+     $score = new Score();
+     $score->value =$value;
+     $score->course = $course;
+     $score->type = $score_type;
+     $score->semester = $score_semester;
+
+
+     try { 
+        $student->scores()->save($score);
+        } catch(\Illuminate\Database\QueryException $ex){ 
+        
+       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'.$ex->getMessage()];
+       // Note any method of class PDOException can be called on $ex.
+      }
+     
+
      return ['success'=>true];
     }
 
@@ -96,5 +126,12 @@ class ScoreController extends Controller
      }
 
 	return ['title'=>'<h1>'.$form_type.' Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>$type,'courses'=>$courses,'classes'=>$classes])->render()];
+    }
+
+    public function compareStudents($student_1, $student_2)
+    {
+    	if($student_1->id!=$student_2->id)
+    		return false;
+    	return true;
     }
 }

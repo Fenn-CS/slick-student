@@ -16,13 +16,15 @@ if (event.which == 13)
       var id = student[1];
       var type = settings[0];
       var semester = settings[1];
-      uploadScore(score,matricule,id,type,semester,event);
+      var course = settings[2];
+      uploadScore(score,course,matricule,id,type,semester,event);
       console.log('===CONSOLE REPORT===');
       console.log('Matricule:'+student[0]);
       console.log('ID:'+student[1]);
       console.log('Type:'+settings[0]);
       console.log('Semester:'+settings[1]);
       console.log('Score:'+$(event.target).val());
+      console.log('Course:'+course);
 
 
  }
@@ -35,13 +37,13 @@ $('body').on('click', '.score-action', function(event){
 });
 
 
-function uploadScore(score, student_matricule, student_id, type, semester,event)
+function uploadScore(score,course, student_matricule, student_id, type, semester,event)
 {
 	  url = base+'/scores/addscore';
 		$.ajax({
      	url:url,
      	type: "POST",
-     	data:{score:score,matricule:student_matricule,id:student_id,type:type,semester:semester,_token:token},
+     	data:{score:score,course:course,matricule:student_matricule,id:student_id,type:type,semester:semester,_token:token},
      	success:function(data){
         if(data.success){
 
