@@ -67,6 +67,12 @@ class ScoreController extends Controller
 
 
      try { 
+     	$old = Score::where('student_id', $student->id)->where('course', $course)->where('type', $score_type)->first();
+     	if($old instanceof Score){
+     		$score = $old;
+     		$score->value = $value;
+     		$score->update();
+     	}
         $student->scores()->save($score);
         } catch(\Illuminate\Database\QueryException $ex){ 
         
