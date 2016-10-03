@@ -32,9 +32,10 @@ class AcademicYearController extends Controller
     public function activateAcademicYear(Request $request)
     {
       $year = AcademicYear::where('current', true)->first();
-      if($year instanceof AcademicYear)
+      if($year instanceof AcademicYear){
       $year->current = false;
-      $year->save();
+      $year->save();	
+      } 
       $year = AcademicYear::where('name', $request['name'])->first();
       $year->current = true;
       $year->save();

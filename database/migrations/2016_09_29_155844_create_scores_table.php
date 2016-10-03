@@ -20,7 +20,7 @@ class CreateScoresTable extends Migration
             $table->float('value', 5, 2);
             $table->unsignedInteger('semester');
             $table->unsignedInteger('class');
-            $table->unsignedInteger('academic_year');
+            $table->unsignedInteger('academic_year_id');
             $table->timestamps();
         });
     }

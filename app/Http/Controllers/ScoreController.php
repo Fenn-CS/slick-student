@@ -12,6 +12,7 @@ use App\Course;
 use App\ProgramClass;
 use App\RegisteredCourse;
 use App\Score;
+use App\AcademicYear;
 
 class ScoreController extends Controller
 {
@@ -63,6 +64,10 @@ class ScoreController extends Controller
      if(!$this->compareStudents($student, $proposed_student))
      return ['success'=>false, 'message'=>'There\'s and inregularity with information concerning '.$student_matricule];
 
+      $academic_year = AcademicYear::where('current', true)->first();
+      if(!$academic_year instanceof AcademicYear)
+         return ['success'=>false,'message'=>'No active academic year please contact administration'];
+
      $score = new Score();
      $score->value =$value;
      $score->course = $course;
@@ -78,6 +83,8 @@ class ScoreController extends Controller
      	}
 
         $student->scores()->save($score);
+        $academic_year->scores()->save($score);
+
         } catch(\Illuminate\Database\QueryException $ex){ 
         
        return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'.$ex->getMessage()];

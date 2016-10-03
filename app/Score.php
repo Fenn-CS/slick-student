@@ -11,4 +11,9 @@ class Score extends Model
     {
     	return $this->belongsTo('App\Student');
     }
+
+    public function academicYear()
+    {
+    	return $this->belongsTo('App\AcademicYear');
+    }
 }

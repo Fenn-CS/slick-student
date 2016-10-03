@@ -65,7 +65,6 @@ sendform(url, data, event);
 });
 $('body').on('click', '.year-activate', function(event){
   var year_name = $(event.target).data('name');
-  console.log(year_name);
   var data = 'name='+year_name+'&_token='+$('#token').val();
   var url = base+'/years/year/activate';
   sendform(url, data, event);

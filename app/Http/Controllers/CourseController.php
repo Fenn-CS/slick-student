@@ -10,6 +10,7 @@ use App\Course;
 use App\RegisteredCourse;
 use App\Student;
 use App\User;
+use App\AcademicYear;
 
 class CourseController extends Controller
 {
@@ -78,6 +79,10 @@ class CourseController extends Controller
       if($user->personality=='Student'){
       $student = Student::where('user_id', $request->user()->id)->first();
       $courses = explode("-", $request['courses']);
+      $academic_year = AcademicYear::where('current', true)->first();
+      if(!$academic_year instanceof AcademicYear)
+         return ['success'=>false,'message'=>'No active academic year please contact administration'];
+
       
       /*Loop over array of courses and save the one by one */
       foreach($courses as $course){
@@ -92,6 +97,7 @@ class CourseController extends Controller
          return ['success'=>false,'message'=>'One or more of the courses you selected have already been registered againts your name this particularly includes'.view('layouts.courses', ['courses'=>[$Course]])->render()];
 
         $student->courses()->save($registeredCourse);
+        $academic_year->registeredCourses()->save($registeredCourse);
       }
      }
         /*Get All courses registered by student and pass the to the view for rendering */
