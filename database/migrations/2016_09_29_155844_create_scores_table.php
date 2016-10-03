@@ -17,9 +17,10 @@ class CreateScoresTable extends Migration
             $table->unsignedInteger('student_id');
             $table->unsignedInteger('course');
             $table->string('type');
-            $table->float('value', 4, 1);
+            $table->float('value', 5, 2);
             $table->unsignedInteger('semester');
             $table->unsignedInteger('class');
+            $table->unsignedInteger('academic_year');
             $table->timestamps();
         });
     }

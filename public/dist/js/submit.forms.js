@@ -57,8 +57,19 @@ $('body').on('click', '#save-course-assignment', function(event){
   sendform(url, data, event);
 
 });
-
-
+$('body').on('click', '#add-new-academic-year', function(event){
+event.preventDefault();
+var data= $('#form-add-new-year').serialize();
+var url = base+'/years/add';
+sendform(url, data, event);
+});
+$('body').on('click', '.year-activate', function(event){
+  var year_name = $(event.target).data('name');
+  console.log(year_name);
+  var data = 'name='+year_name+'&_token='+$('#token').val();
+  var url = base+'/years/year/activate';
+  sendform(url, data, event);
+});
 
 $('body').on('change', '#classprogram', function(event){
 nameclass();

@@ -104,6 +104,12 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
       $controller = new TeacherController();
       return ['title'=>'<h1>Course Registration <small>Control Panel</small><h1>','content'=>view('pages.viewcourseassigments', ['assignments'=>$controller->getTeacherCourses()])->render()];
     }
+
+    public function academicYearControls()
+    {
+      $controller = new AcademicYearController();
+     return ['title'=>'<h1>Academic Year Controls <small>Control Panel</small><h1>','content'=>view('pages.academicyearcontrols', ['years'=>$controller->getAcademicYears()])->render()];
+    }
     public function test(Request $request){
       //Test to create department
       // $dept = new Department();

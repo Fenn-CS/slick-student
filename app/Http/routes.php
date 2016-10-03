@@ -81,6 +81,7 @@ Route::get('/views/getclasses', 'DashboardController@getClassesView');
 Route::get('/views/getteachers', 'DashboardController@getTeachersView');
 Route::get('/views/getteacherassigns', 'DashboardController@getTeacherAssignments');
 Route::get('/views/userinfo', 'DashboardController@getUserInfoView'); 
+Route::get('/views/academicyears', 'DashboardController@academicYearControls');
 // Route::get('/views/getscores', 'DashboardController@getScoresView'); 
 /**** POST REQUEST THAT RETURN FORM VIEWS ****/
 /*Scores*/
@@ -116,6 +117,9 @@ Route::post('/departments/add', 'DepartmentController@addNewDepartment');
 Route::post('/teachers/add', 'TeacherController@addNewTeacher');
 /*Classes*/
 Route::post('/classes/add', 'ProgramClassController@addNewClass');
+/*AcademicYears*/
+Route::post('/years/add', 'AcademicYearController@addNewAcademicYear');
+Route::post('/years/year/activate', 'AcademicYearController@activateAcademicYear');
 
 
 

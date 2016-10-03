@@ -279,10 +279,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a ><i class="fa fa-circle-o"></i>Publications</a></li>
+          <li><a ><i class="fa fa-circle-o"></i>Publications</a></li>  
             <li><a ><i class="fa fa-circle-o"></i>Course Registration</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Mark Registration</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Payments</a></li>
+            <li><a id="form-academic-years"><i class="fa fa-circle-o"></i>Academic Years</a></li> 
+
       
         
           </ul>

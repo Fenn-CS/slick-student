@@ -127,6 +127,13 @@ $('body').on('click','#form-viewcourseassigns', function(event){
 
 });
 
+$('body').on('click', '#form-academic-years', function(event){
+  event.preventDefault();
+  url = base+'/views/academicyears';
+    getView(url, event);
+
+});
+
 
 
 
