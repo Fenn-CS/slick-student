@@ -26,7 +26,7 @@
                  <tr>
                  <td>{{$student->matricule}}</td>
                   <td>{{$student->name}}</td>
-                  <td><input type=""  class="score-box" data-student="{{$student->matricule}}-{{$student->id}}" data-settings="{{$settings}}" id="{{$student->matricule}}"></td>
+                  <td><input type=""  class="score-box" data-student="{{$student->matricule}}-{{$student->id}}" data-settings="{{$settings}}" id="{{$student->matricule}}" @if($student->score!='') value="{{$student->score}}" disabled="true" @else @endif></td>
                   <td>
                   <a ><i class="fa fa-unlock-alt score-action" data-input="{{$student->matricule}}"></i></a>
                   <!-- <a class="score-action"><i class="fa fa-save"></i></a> -->

@@ -31,10 +31,14 @@ class ScoreController extends Controller
      $course = Course::where('code', $course)->first();
      $registered_students = RegisteredCourse::where('course', $course->id)->get(); //In Future classes may be included
      $students = array();
+
      foreach ($registered_students as $registered_student) {
      $student = Student::find($registered_student->student_id);
+     $score   = $student->scores()->where('course', $course->id)->where('type', $type)->first(['value']); 
+     if($score instanceof Score)
+     	$score = $score->value;
      $user = User::find($student->user_id);
-     $students[] = (object) ['id'=>$student->id,'matricule'=>$user->reg_number,'name'=>$user->name];
+     $students[] = (object) ['id'=>$student->id,'matricule'=>$user->reg_number,'name'=>$user->name,'score'=>$score];
      }
       
      if($course==''){
@@ -71,8 +75,8 @@ class ScoreController extends Controller
      	if($old instanceof Score){
      		$score = $old;
      		$score->value = $value;
-     		$score->update();
      	}
+
         $student->scores()->save($score);
         } catch(\Illuminate\Database\QueryException $ex){ 
         
