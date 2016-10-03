@@ -6,8 +6,8 @@
               <h3 class="box-title">{{$type}} Mark Registrations for {{$course_name}}</h3> 
             </div>
               <div class="col-md-6">
-              <input type="file" name="" class="col-md-6"> 
-              <button class="btn btn-slick col-md-4" style="float:right;">Import scores</button>
+              <input type="file"  class="col-md-6" id="csv-mark-input"> 
+              <button class="btn btn-slick col-md-4"  id="import-scores" style="float:right;">Import scores</button>
             </div>
             </div>
             <!-- /.box-header -->

@@ -86,6 +86,7 @@
 <script src="{{asset('dist/js/submit.forms.js')}}"></script>
 <script src="{{asset('dist/js/course.registration.js')}}"></script>
 <script src="{{asset('dist/js/upload.scores.js')}}"></script>
+<script src="{{asset('dist/js/uploads.js')}}"></script>
 
 
 

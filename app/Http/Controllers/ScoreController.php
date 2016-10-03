@@ -145,6 +145,11 @@ class ScoreController extends Controller
 	return ['title'=>'<h1>'.$form_type.' Scores Prompt<small>Control Panel</small><h1>','content'=>view('pages.scoresprompt',['id'=>$type,'courses'=>$courses,'classes'=>$classes])->render()];
     }
 
+    public function importScores(Request $request)
+    {
+        return ['success'=>true,'message'=>'Hello our egineers are working on it :)'];
+    }
+
     public function compareStudents($student_1, $student_2)
     {
     	if($student_1->id!=$student_2->id)

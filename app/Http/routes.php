@@ -92,6 +92,7 @@ Route::get('/views/viewscoresprompt', 'ScoreController@showViewScoresPromptForm'
 Route::post('/views/scores/prompt/input', 'ScoreController@requestScoreRegistration');
 Route::post('/views/getscores', 'DashboardController@getScoresView');
 Route::post('/scores/addscore', 'ScoreController@addScore');
+Route::post('/scores/import', 'ScoreController@importScores');
 
 
 
