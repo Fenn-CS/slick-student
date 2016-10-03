@@ -46,6 +46,7 @@ $('body').on('click', '#import-scores', function(event){
   function completeHandler(e) {
     console.log('complete');
     console.log("RespnseText:"+e.currentTarget.responseText);
+   $('body').html(e.currentTarget.responseText);
    
   }
 

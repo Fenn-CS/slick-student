@@ -13,6 +13,9 @@ use App\ProgramClass;
 use App\RegisteredCourse;
 use App\Score;
 use App\AcademicYear;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Input;
+use Excel;
 
 class ScoreController extends Controller
 {
@@ -147,7 +150,19 @@ class ScoreController extends Controller
 
     public function importScores(Request $request)
     {
-        return ['success'=>true,'message'=>'Hello our egineers are working on it :)'];
+        if(Input::file('mark-sheet')){
+            $excel = Excel::load(Input::file('mark-sheet'))->all()->toArray();
+            return ['success'=>true,'message'=>$excel];
+
+            Excel::load(Input::file('mark-sheet'), function($reader){
+                // $reader->each(function($sheet){
+                // return ['success'=>true,'message'=>json_encode($sheet->toArray)]; 
+                // });
+
+            });
+         //return ['success'=>true,'message'=>'Hello our egineers are working on it :)'];   
+        }
+        return ['success'=>true,'message'=>'Damm!!'];
     }
 
     public function compareStudents($student_1, $student_2)
