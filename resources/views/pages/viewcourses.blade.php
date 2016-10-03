@@ -14,6 +14,7 @@
                   <th>Credit Val</th>
                   <th>Status</th>
                   <th>Level</th>
+                  <th>Semester</th>
                   <th>Instructors</th>
                   <th>Actions</th>
                 </tr>
@@ -27,6 +28,7 @@
                   <td>{{$course->credit_value}}</td>
                   <td>{{$course->status}}</td>
                   <td>{{$course->level}}</td>
+                  <td>{{$course->semester}}</td>
                   <td>null</td>
                   <td>
                   <a class="actions"><i class="fa fa-edit"></i></a>

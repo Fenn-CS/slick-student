@@ -23,6 +23,12 @@ class CourseController extends Controller
        $credval = $request['creditvalue'];
        $status = $request['status'];
        $level = $request['level'];
+       $semester = $request['semester'];
+       if($semester=='1st Semester'){
+        $semester =1;
+       } else {
+        $semester =2;
+       }
        $problems ='';
 
        if($code==''){
@@ -39,6 +45,7 @@ class CourseController extends Controller
        $course->credit_value=$credval;
        $course->status=$status;
        $course->level=$level;
+       $coures->semester = $semester;
        $program = Program::where('name',$program)->first();
        try{
         

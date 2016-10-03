@@ -43,6 +43,13 @@
                   </select>
                 </div>
                  <div class="form-group col-md-6">
+                  <label >Semester</label>
+                  <select class="form-control" name="semester">
+                  <option>1st Semester</option>
+                   <option>2nd Semester</option>
+                  </select>
+                </div>
+                 <div class="form-group col-md-6">
                   <label >Status</label>
                   <select class="form-control" name="status">
                   <option>A</option>
