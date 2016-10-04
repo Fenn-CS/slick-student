@@ -1,7 +1,7 @@
   <div class="col-md-6">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Academic Year Operations</h3>
+              <h3 class="box-title">Fee Operations</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -11,8 +11,8 @@
                 <tr>
                   <th>#</th>
                   <th>Fee Name</th>
-                  <th># Installements</th>
-                  <th>Installement Minimum</th>
+                  <th># Installments</th>
+                  <th>Installment Minimum</th>
                   <th>Total</th>
                   <th>Actions</th>
                 </tr>
@@ -22,11 +22,11 @@
                 <tr>
                 <td>#</td>
                   <td>{{$fee->name}}</td>
-                  <td> {{$fee->installements}}</td>
+                  <td> {{$fee->installments}}</td>
                   <td>{{$fee->minimum}}</td>
                   <td>{{$fee->total}}</td>
                   <td>
-                  <a class="actions"><i class="fa fa-check year-activate" data-name="{{$year->name}}"></i></a>
+                  <a class="actions"><i class="fa fa-edit"></i></a>
                   <a class="actions"><i class="fa fa-trash-o "></i></a>
 
                   </td>
@@ -44,7 +44,7 @@
     <div class="col-md-6">
             <div class="box">
              <div class="box-header">
-              <h3 class="box-title">Add new academic year</h3>
+              <h3 class="box-title">Add a Fee</h3>
             </div>
             <div class="box-body">
             <form id="form-add-new-fee">
@@ -54,7 +54,7 @@
              </div>
              <div class="form-group ">
               <label>Allowed Number of Installments</label>
-                <input type="text" name="intallments" class="form-control" placeholder="4"> 
+                <input type="text" name="installments" class="form-control" placeholder="4"> 
              </div>
              <div class="form-group ">
               <label>Installment Minimum</label>

@@ -27,8 +27,21 @@ class FeeController extends Controller
          $problems .='<li>You must provide total amount for fee</li></ul>';  	
         }
        if($problems!=''){
-       return ['success'=>false,'message'=>$problems];
+       return ['success'=>false,'message'=>'Fee not added due to the following <br>'.$problems];
        }
+        $fee = new Fee();
+       	$fee->name = $name;
+       	$fee->installments = $installments;
+       	$fee->minimum = $minimum;
+       	$fee->total = $total;
+       try {
+
+          $fee->save();
+       }catch(\Illuminate\Database\QueryException $ex){ 
+
+       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'.$ex->getMessage()];
+       // Note any method of class PDOException can be called on $ex.
+        }
 
   return ['success'=>true,'message'=>'The '.$name.' successfully added','reset'=>'#form-fee-operations'];
     }

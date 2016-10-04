@@ -267,7 +267,7 @@
           <ul class="treeview-menu">
             <li><a id="form-fee-operations"><i class="fa fa-circle-o"></i>Fee Operations</a></li>
             <li><a ><i class="fa fa-circle-o"></i>View Statistics</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>Pay</a></li>
+            <li><a id="form-fee-pay"><i class="fa fa-circle-o"></i>Pay</a></li>
           </ul>
         </li>
 
