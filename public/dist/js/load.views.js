@@ -133,7 +133,12 @@ $('body').on('click', '#form-academic-years', function(event){
     getView(url, event);
 
 });
+$('body').on('click', '#form-fee-operations', function(event){
+  event.preventDefault();
+  url = base+'/views/fees';
+    getView(url, event);
 
+});
 
 
 

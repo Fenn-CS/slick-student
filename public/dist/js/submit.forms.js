@@ -63,6 +63,12 @@ var data= $('#form-add-new-year').serialize();
 var url = base+'/years/add';
 sendform(url, data, event);
 });
+$('body').on('click', '#add-new-fee', function(event){
+event.preventDefault();
+var data= $('#form-add-new-fee').serialize();
+var url = base+'/fees/add';
+sendform(url, data, event);
+});
 $('body').on('click', '.year-activate', function(event){
   var year_name = $(event.target).data('name');
   var data = 'name='+year_name+'&_token='+$('#token').val();

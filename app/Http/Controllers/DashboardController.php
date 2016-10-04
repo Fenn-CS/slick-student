@@ -110,6 +110,11 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
       $controller = new AcademicYearController();
      return ['title'=>'<h1>Academic Year Controls <small>Control Panel</small><h1>','content'=>view('pages.academicyearcontrols', ['years'=>$controller->getAcademicYears()])->render()];
     }
+    public function feeControls()
+    {
+      $controller = new FeeController();
+      return ['title'=>'<h1>Fee Controls <small>Control Panel</small><h1>','content'=>view('pages.feeoperations',['fees'=>$controller->getFees()])->render()]; 
+    }
     public function test(Request $request){
       //Test to create department
       // $dept = new Department();
