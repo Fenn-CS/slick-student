@@ -153,7 +153,7 @@
         <li class="header">MAIN NAVIGATION</li>
          <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Info</span>
+            <i class="fa fa-user-secret"></i> <span>Info</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -165,7 +165,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Students</span>
+            <i class="fa fa-users"></i> <span>Students</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -177,7 +177,7 @@
         </li>
          <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Teachers</span>
+            <i class="fa fa-male"></i> <span>Teachers</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -189,10 +189,10 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-book"></i>
             <span>Courses</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -205,7 +205,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
+            <i class="fa fa-institution"></i>
             <span>Departments</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -220,7 +220,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i>
+            <i class="fa fa-group"></i>
             <span>Classes</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -234,7 +234,7 @@
        
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-table"></i> <span>Results</span>
+            <i class="fa fa-envelope-o"></i> <span>Results</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -248,7 +248,7 @@
         </li>
           <li class="treeview">
           <a href="#">
-            <i class="fa fa-table"></i> <span>Fees</span>
+            <i class="fa fa-money"></i> <span>Fees</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -262,7 +262,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-stop"></i> <span>Restrictions</span>
+            <i class="fa fa-ban"></i> <span>Restrictions</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -280,7 +280,7 @@
         </li>
          <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Defaults</span>
+            <i class="fa fa-gear"></i> <span>Defaults</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
