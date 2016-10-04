@@ -6,7 +6,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{url('/dashboard')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>SLC</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -135,9 +135,9 @@
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" >
     <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+    <section class="sidebar"  >
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
@@ -286,10 +286,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a ><i class="fa fa-circle-o"></i>Student Numbering System</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>Teacher Numbering System </a></li>
-
-        
+            <li><a ><i class="fa fa-circle-o"></i>Student Numbering Systems</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Teacher Numbering Systems </a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Result Calcuation Systems</a></li>
+            <li><a ><i class="fa fa-circle-o"></i>Education Sectors</a></li>
           </ul>
         </li>
         
@@ -410,7 +410,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  <footer class="main-footer" >
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.6
     </div>
