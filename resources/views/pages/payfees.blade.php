@@ -12,6 +12,7 @@
               <div class="form-group">
                   <label>Fee Name</label>
                   <select class="form-control" name="course" id="available-fees">
+                    <option>...</option>
                     @foreach($fees as $fee)
                     <option>{{$fee->name}}</option>
                     @endforeach
@@ -28,7 +29,8 @@
                
                 <div class="form-group">
                   <label >Mode of payment</label>
-                  <select class="form-control"  name="teacher">
+                  <select class="form-control"  name="teacher" id="payment-method">
+                    <option>...</option>
                     <option>Mobile Money</option>
                     <option>Credit Card</option>
                   </select>
@@ -38,7 +40,7 @@
                
               </div>
               <!-- /.box-body -->
-
+         @include('pages.paymentmethods')
               <div class="box-footer">
                 <input type="hidden" name="_token" value="{{Session::token()}}">
                 <button type="submit" class="btn btn-slick col-md-4 col-md-offset-4" id="pay-fee">Pay</button>
