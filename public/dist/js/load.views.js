@@ -147,6 +147,15 @@ $('body').on('click', '#form-fee-pay', function(event){
 
 });
 
+$('body').on('click', '#form-viewresultsprompt', function(event){
+  event.preventDefault();
+  url = base+'/views/viewresultsprompt';
+  getView(url, event);
+
+});
+
+
+
 
 
 

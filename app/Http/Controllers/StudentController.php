@@ -97,7 +97,8 @@ class StudentController extends Controller
     }
     private function str_to_date($str)
     {
-
+       if($str=='')
+        return '';
      $date_arr = explode('-', str_replace("/","-",$str));
      return $date_arr[2].'-'.$date_arr[1].'-'.$date_arr[0];
    }

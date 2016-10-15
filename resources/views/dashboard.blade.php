@@ -242,7 +242,7 @@
           <ul class="treeview-menu">
             <li><a id="form-addscoresprompt"><i class="fa fa-circle-o"></i>Add Scores</a></li>
             <li><a id="form-viewscoresprompt"><i class="fa fa-circle-o"></i>View Scores</a></li>
-            <li><a ><i class="fa fa-circle-o"></i>My Results</a></li>
+            <li><a id="form-viewresultsprompt"><i class="fa fa-circle-o"></i>My Results</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Transcripts</a></li>
           </ul>
         </li>
