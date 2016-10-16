@@ -20,3 +20,6 @@
   <h4>All the crazy messages</h4>
 </div>
 <!-- Information modal end -->
+<!-- Spinner -->
+<div id="spinner"></div>
+<!-- Spinner end -->

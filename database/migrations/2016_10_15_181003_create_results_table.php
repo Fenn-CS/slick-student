@@ -14,6 +14,10 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('academic_year_id');
+            $table->unsignedInteger('semester');
+            $table->string('type');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

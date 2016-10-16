@@ -6,12 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\AcademicYear;
+use App\Result;
 
 class ResultController extends Controller
 {
     //
 
-
+     public function getResults()
+     {
+     	$results = Result::all();
+     	return $results;
+     }
      public function showViewResultsPromptForm(Request $request)
      {
      	$academicyears = AcademicYear::all();

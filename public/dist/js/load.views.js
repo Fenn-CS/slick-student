@@ -153,6 +153,12 @@ $('body').on('click', '#form-viewresultsprompt', function(event){
   getView(url, event);
 
 });
+$('body').on('click', '#form-result-restrictions', function(event){
+  event.preventDefault();
+  url = base+'/views/restrictions/results';
+  getView(url, event);
+
+});
 
 
 
@@ -162,12 +168,16 @@ $('body').on('click', '#form-viewresultsprompt', function(event){
 
 	function getView(url, event){
 	$(event.target).attr("disabled", true);
+  settings = init();
+  var target = document.getElementById('spinner');
+  var spinner = new Spinner(settings).spin(target);
 	 $.ajax({
      	url:url,
      	type: "GET",
      	data:{},
      	success:function(data){
      	$(event.target).attr("disabled", false);
+      spinner.stop();
         $('.content-header').html(data.title);
         $('.content').html(data.content);
       },

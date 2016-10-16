@@ -2,7 +2,7 @@
           <!-- general form elements -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Student Registration</h3>
+              <h3 class="box-title">Teacher Registration</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->

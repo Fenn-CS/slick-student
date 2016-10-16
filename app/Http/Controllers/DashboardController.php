@@ -120,6 +120,14 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
       $controller = new FeeController();
       return ['title'=>'<h1>Fee Payments <small>Control Panel</small><h1>','content'=>view('pages.payfees',['fees'=>$controller->getFees()])->render()]; 
     }
+
+    public function resultRestrictions()
+    {
+      $AYcontroller = new AcademicYearController();
+      $Rcontroller = new ResultController();
+
+      return ['title'=>'<h1>Result Publications <small>Control Panel</small><h1>','content'=>view('pages.resultrestrictions', ['academicyears'=>$AYcontroller->getAcademicYears(),'results'=>$Rcontroller->getResults()])->render()];
+    }
     public function test(Request $request){
       //Test to create department
       // $dept = new Department();

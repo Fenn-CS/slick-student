@@ -40,11 +40,12 @@
    
     @yield('content')
 
+
     @include('pages.modals')
 
     <!--Resources for JS-->
     <input type="hidden" value="{{url('/')}}" id="baseUrl">
-     <input type="hidden" value="{{Session::token()}}" id="token">
+    <input type="hidden" value="{{Session::token()}}" id="token">
 
     <!-- jQuery 2.2.3 -->
 <script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
@@ -83,6 +84,8 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>
 <!-- Custom JS files,load views-forms and operations -->
+<script src="{{asset('dist/js/spin.min.js')}}"></script>
+<script src="{{asset('dist/js/animations.js')}}"></script>
 <script src="{{asset('dist/js/load.views.js')}}"></script>
 <script src="{{asset('dist/js/submit.forms.js')}}"></script>
 <script src="{{asset('dist/js/course.registration.js')}}"></script>

@@ -16,4 +16,9 @@ class AcademicYear extends Model
     {
     	return $this->hasMany('App\Score');
     }
+
+    public function results()
+    {
+    	return $this->hasMany('App\Result');
+    }
 }

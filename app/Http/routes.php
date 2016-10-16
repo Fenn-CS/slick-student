@@ -84,6 +84,7 @@ Route::get('/views/userinfo', 'DashboardController@getUserInfoView');
 Route::get('/views/academicyears', 'DashboardController@academicYearControls');
 Route::get('/views/fees/operations', 'DashboardController@feeControls');
 Route::get('/views/fees/pay', 'DashboardController@payFee');
+Route::get('/views/restrictions/results', 'DashboardController@resultRestrictions');
 // Route::get('/views/getscores', 'DashboardController@getScoresView'); 
 /**** POST REQUEST THAT RETURN FORM VIEWS ****/
 /*Scores*/
