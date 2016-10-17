@@ -20,11 +20,13 @@
                 <tr>
                 <td>#</td>
                   <td>{{$year->name}}</td>
+                  <td>
                   @if($year->current)
-                  <td>Active</td>
+                  Active
                   @else
-                  <td>Inactive</td>
+                  Inactive
                   @endif
+                  </td>
                   <td>
                   <a class="actions"><i class="fa fa-check year-activate" data-name="{{$year->name}}"></i></a>
                   <a class="actions"><i class="fa fa-trash-o "></i></a>

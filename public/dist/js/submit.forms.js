@@ -75,6 +75,12 @@ $('body').on('click', '.year-activate', function(event){
   var url = base+'/years/year/activate';
   sendform(url, data, event);
 });
+$('body').on('click', '.result-activate', function(event){
+  var result_id = $(event.target).data('id');
+  var data = 'id='+result_id+'&_token='+$('#token').val();
+  var url = base+'/results/result/activate';
+  sendform(url, data, event);
+});
 
 $('body').on('click', '#result-publish', function(event){
  event.preventDefault();

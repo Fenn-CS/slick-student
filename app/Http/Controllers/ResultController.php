@@ -52,4 +52,20 @@ class ResultController extends Controller
      return ['title'=>'<h1>Results Prompt<small>Control Panel</small><h1>','content'=>view('pages.resultsprompt',['academicyears'=>$academicyears])->render()];
 
      }
+
+     public function activateResultPublication(Request $request)
+     {
+      $result = Result::find($request['id']);
+      $availability = '';
+      if($result->status){
+      $result->status= false;
+      $availability = 'unavailable';
+      } else {
+       $result->status= true;
+      $availability = 'available';
+      }
+       $result->save();	
+     
+      return ['success'=>true,'message'=>'Results now '.$availability,'reset'=>'#form-result-restrictions'];
+     }
 }

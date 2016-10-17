@@ -23,9 +23,15 @@
                   <td>{{$result->academicYear->name}}</td>
                   <td>{{$result->semester}}</td>
                   <td>{{$result->type}}</td>
-                  <td>{{$result->status}}</td>
                   <td>
-                  <a class="actions"><i class="fa fa-check result-activate" data-name=""></i></a>
+                  @if($result->status)
+                  Available
+                  @else
+                  Unavailable
+                  @endif
+                  </td>
+                  <td>
+                  <a class="actions"><i class="fa fa-check result-activate" data-id="{{$result->id}}"></i></a>
                   <a class="actions"><i class="fa fa-trash-o "></i></a>
 
                   </td>
