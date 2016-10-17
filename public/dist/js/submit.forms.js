@@ -76,6 +76,13 @@ $('body').on('click', '.year-activate', function(event){
   sendform(url, data, event);
 });
 
+$('body').on('click', '#result-publish', function(event){
+ event.preventDefault();
+var data= $('#form-add-result').serialize();
+var url = base+'/results/add';
+sendform(url, data, event);
+});
+
 $('body').on('change', '#classprogram', function(event){
 nameclass();
 });
