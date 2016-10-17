@@ -6,7 +6,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="form-score-prompt">
+            <form id="form-result-prompt">
               <div class="box-body">
                 <div class="form-group">
                   <label for="semester">Semester</label>
@@ -19,7 +19,7 @@
                 <div class="form-group">
                   <label for="title">Type</label>
               
-                  <select class="form-control" name="course">
+                  <select class="form-control" name="type">
                   <option>CA</option>
                   <option>FINAL</option>
                   </select>
@@ -29,7 +29,7 @@
               
                 <div class="form-group">
                   <label >Year</label>
-                  <select class="form-control" name="class">
+                  <select class="form-control" name="year">
                   @foreach($academicyears as $academicyear)
                   <option>{{$academicyear->name}}</option>
                   @endforeach
@@ -42,7 +42,7 @@
 
               <div class="box-footer">
               <input type="hidden" name="_token" value="{{Session::token()}}">
-                <button  class="btn btn-slick col-md-4 col-md-offset-4" id="">Validate</button>
+                <button  class="btn btn-slick col-md-4 col-md-offset-4" id="show-result">Validate</button>
               </div>
             </form>
           </div>

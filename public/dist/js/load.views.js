@@ -71,6 +71,15 @@ $('body').on('click','#form-viewscores', function(event){
 });
 
 
+$('body').on('click','#show-result', function(event){
+    event.preventDefault();
+    url = base+'/results/getresults';
+    var data= $('#form-result-prompt').serialize();
+    submitAndGetView(data, url, event);
+
+});
+
+
 $('body').on('click','#form-registercourses', function(event){
 	event.preventDefault();
 	url = base+'/views/registercourses';

@@ -129,7 +129,8 @@ Route::post('/years/year/activate', 'AcademicYearController@activateAcademicYear
 Route::post('/fees/add', 'FeeController@addNewFee');
 /*Results */
 Route::post('/results/add', 'ResultController@addNewResult');
-Route::post('results/result/activate', 'ResultController@activateResultPublication');
+Route::post('/results/result/activate', 'ResultController@activateResultPublication');
+Route::post('/results/getresults', 'ResultController@showResults');
 
 
 

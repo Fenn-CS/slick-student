@@ -8,7 +8,7 @@ class Result extends Model
 {
     //
      public function academicYear()
-    {
+     {
     	return $this->belongsTo('App\AcademicYear');
     }
 }
