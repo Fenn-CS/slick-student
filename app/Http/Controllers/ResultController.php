@@ -93,6 +93,7 @@ class ResultController extends Controller
       if($user->personality==='Student'){
        $student = $user->student()->first();
        $scores = $student->scores()->where('semester', $semester)->where('type',$type)->where('academic_year_id',$academicyear->id)->get();
+       $Scores = [];
        foreach ($scores as $score) {
         $course = Course::find($score->course);
         $Scores[] = (object) ['course_code'=>$course->code,'course_title'=>$course->title,'value'=>$score->value,'grade'=>''];
