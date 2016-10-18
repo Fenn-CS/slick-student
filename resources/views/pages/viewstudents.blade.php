@@ -23,7 +23,7 @@
                   <td>{{$student->reg_number}}</td>
                   <td>{{$student->name}}</td>
                   <td>null</td>
-                  <td>{{$student->student->program}}</td>
+                  <td>{{$student->student->program->name}}</td>
                   <td>
                   <a class="actions"><i class="fa fa-edit"></i></a>
                   <a class="actions"><i class="fa fa-trash-o"></i></a>
