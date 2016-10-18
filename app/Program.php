@@ -11,6 +11,10 @@ class Program extends Model
     {
     return $this->belongsTo('App\Department');
     }
+    public function students()
+    {
+    return $this->hasMany('App\Student');
+    }
     public function courses()
     {
     return $this->hasMany('App\Course');

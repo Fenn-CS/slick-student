@@ -70,14 +70,14 @@ class StudentController extends Controller
         $student->place_of_birth = $birthplace;
         $student->phone = $phone;
         $program = Program::where('name',$program)->first();
-        $student->program = $program->id;
         $student->admission_year = $admission_year;
         $student->sex = $sex;
         try { 
         $user->student()->save($student);
+        $program->students()->save($student);
         } catch(\Illuminate\Database\QueryException $ex){ 
         
-       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'];
+       return ['success'=>false,'message'=>'An unexpected error occured, this record may already exist.'.$ex->getMessage()];
        // Note any method of class PDOException can be called on $ex.
       }
 

@@ -12,6 +12,11 @@ class Student extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function program()
+    {
+        return $this->belongsTo('App\Program');
+    }
+
     public function courses()
     {
     	return $this->hasMany('App\RegisteredCourse');
