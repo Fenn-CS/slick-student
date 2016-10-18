@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Student;
 use App\User;
 use App\Program;
+use App\AcademicYear;
 
 class StudentController extends Controller
 {
@@ -43,6 +44,8 @@ class StudentController extends Controller
          $problems .='<li>You must provide student place of birth</li>';  	
         }if($program==''){
          $problems .='<li>You must select a program for this student</li>';  	
+        }if($admission_year==''){
+         $problems .='<li>You must specify year of admission</li>';     
         }
       
         if($problems!=''){
@@ -73,6 +76,7 @@ class StudentController extends Controller
         $student->admission_year = $admission_year;
         $student->sex = $sex;
         try { 
+            //WRTIE CONTINUITY CHECKS TO ROLLBACK CHANGES IF ANY STEP FAILS!!!
         $user->student()->save($student);
         $program->students()->save($student);
         } catch(\Illuminate\Database\QueryException $ex){ 
@@ -88,6 +92,13 @@ class StudentController extends Controller
      // $student->save();
         return ['success'=>true,'message'=>'Student '.$matricule.' Registered Sucessfully','reset'=>'#form-addstudent'];
 
+    }
+
+    public function addStudentForm()
+    {
+    $programs = Program::all();
+    $years = AcademicYear::all();
+    return ['title'=>'<h1>Register New Student <small>Control Panel</small><h1>','content'=>view('pages.addstudent',['programs'=>$programs,'years'=>$years])->render()];
     }
 
     public function getStudents()

@@ -98,9 +98,9 @@
                <div class="form-group">
                <label >Admission Year</label>
               <select class="form-control" name="admissionyear">
-              <option>2015/2016</option>
-              <option>2016/2017</option>
-              <option>2017/2018</option>
+              @foreach($years as $year)
+              <option>{{$year->name}}</option>
+              @endforeach
                 
             </select>
                </div>

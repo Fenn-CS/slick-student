@@ -70,7 +70,7 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
     public function getUserInfoView(Request $request)
     {
        $user = User::find($request->user()->id);
-       $model = '';
+       $model = (Object)[];
        if($user->personality=='Student')
        {
           $student = Student::where('user_id', $request->user()->id)->first(); 
@@ -80,8 +80,8 @@ return ['title'=>'<h1>View Teachers <small>Control Panel</small><h1>','content'=
          $teacher = Teacher::where('user_id', $request->user()->id)->first();
          $model = $teacher;
        } else if($user->personality=='Admin')
-       {
-       
+       { 
+        $model = $request->user();
        } else {}
 
  return ['title'=>'<h1>My Personal Info<small>Control Panel</small><h1>','content'=>view('pages.userinfo',['user'=>$user,'model'=>$model])->render()];  

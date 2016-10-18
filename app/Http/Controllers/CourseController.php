@@ -45,7 +45,7 @@ class CourseController extends Controller
        $course->credit_value=$credval;
        $course->status=$status;
        $course->level=$level;
-       $coures->semester = $semester;
+       $course->semester = $semester;
        $program = Program::where('name',$program)->first();
        try{
         

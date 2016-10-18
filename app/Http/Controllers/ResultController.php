@@ -89,17 +89,37 @@ class ResultController extends Controller
       if($errors!=''){
        return ['title'=>'<h1>CA Results<small>Control Panel</small><h1>','content'=>$errors]; 
       }
-
+      
+      $Scores = [];
       if($user->personality==='Student'){
        $student = $user->student()->first();
+       if($type=='CA'){
        $scores = $student->scores()->where('semester', $semester)->where('type',$type)->where('academic_year_id',$academicyear->id)->get();
-       $Scores = [];
+
        foreach ($scores as $score) {
         $course = Course::find($score->course);
         $Scores[] = (object) ['course_code'=>$course->code,'course_title'=>$course->title,'value'=>$score->value,'grade'=>''];
        }
 
        return ['title'=>'<h1>CA Results<small>Control Panel</small><h1>','content'=>view('pages.caresults',['scores'=>$Scores])->render()];
+
+        } else if($type=='FINAL'){
+           
+        
+        $ca_scores = $student->scores()->where('semester', $semester)->where('type','CA')->where('academic_year_id',$academicyear->id)->get();
+           
+       for($i=0;$i<count($ca_scores);$i++) {
+
+       $exam_score = $student->scores()->where('semester', $semester)->where('type','EXAM')->where('academic_year_id',$academicyear->id)->where('course',$ca_scores[$i]->course)->first();
+       $final = $ca_scores[$i]->value + $exam_score->value;
+       $course = Course::find($ca_scores[$i]->course);
+       $Scores[] = (object) ['course_code'=>$course->code,'course_title'=>$course->title,'course_cv'=>$course->credit_value,'ca'=>$ca_scores[$i]->value,'exam'=>$exam_score->value,'final'=>$final,'grade'=>$this->grade($final)];
+       }
+
+         return ['title'=>'<h1>FINAL Results<small>Control Panel</small><h1>','content'=>view('pages.finalresults',['scores'=>$Scores])->render()];
+
+
+        }
       } else {
 
          return ['title'=>'<h1>REFERENCE ERROR<small>Control Panel</small><h1>','content'=>'Results are available only for students, if you are registered as a student also, log in with your student account LOL'];
@@ -108,5 +128,27 @@ class ResultController extends Controller
 
 
        
+     }
+
+     public function grade($score)
+     {
+      if($score>79&&$score<100)
+        return 'A';
+      if($score>69&&$score<80)
+        return 'B+';
+      if($score>59&&$score<70)
+        return 'B';
+      if($score>55&&$score<60)
+        return 'C+';
+      if($score>49&&$score<55)
+        return 'C';
+      if($score>44&&$score<49)
+        return 'D+';
+      if($score>40&&$score<45)
+        return 'D+';
+      if($score>29&&$score<40)
+        return 'D';
+      if($score>-1&&$score<30)
+        return 'F';
      }
 }

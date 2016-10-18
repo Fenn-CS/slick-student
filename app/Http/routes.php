@@ -34,10 +34,10 @@ Route::get('/test', 'DashboardController@test');
 /*
  *Routes to return views
  */
-Route::get('/views/addstudent', function(){
-    $programs = Program::all();
-	return ['title'=>'<h1>Register New Student <small>Control Panel</small><h1>','content'=>view('pages.addstudent',['programs'=>$programs])->render()];
-});
+// Route::get('/views/addstudent', function(){
+    
+// });
+Route::get('/views/addstudent', 'StudentController@addStudentForm');
 
 
 Route::get('/views/addcourse', function(){
