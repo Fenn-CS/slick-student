@@ -12,9 +12,9 @@ class Student extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function program()
+     public function program()
     {
-        return $this->belongsTo('App\Program');
+    return $this->belongsTo('App\Program');
     }
 
     public function courses()

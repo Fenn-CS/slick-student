@@ -35,7 +35,17 @@
                   </td>
                 </tr>
                 @endforeach
-
+             <tr>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+                <td><h4>GPA</h4></td>
+                <td><h4><b>{{$gpa}}/4</b><h4></td>
+             </tr>
            @if(count($scores)===0)
             <tr><b><em>
               None of your scores have been recorded yet! please check later.

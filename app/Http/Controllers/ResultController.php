@@ -116,7 +116,8 @@ class ResultController extends Controller
        $Scores[] = (object) ['course_code'=>$course->code,'course_title'=>$course->title,'course_cv'=>$course->credit_value,'ca'=>$ca_scores[$i]->value,'exam'=>$exam_score->value,'final'=>$final,'grade'=>$this->grade($final)];
        }
 
-         return ['title'=>'<h1>FINAL Results<small>Control Panel</small><h1>','content'=>view('pages.finalresults',['scores'=>$Scores])->render()];
+
+         return ['title'=>'<h1>FINAL Results<small>Control Panel</small><h1>','content'=>view('pages.finalresults',['scores'=>$Scores,'gpa'=>$this->gpa($Scores)])->render()];
 
 
         }
@@ -144,11 +145,44 @@ class ResultController extends Controller
         return 'C';
       if($score>44&&$score<49)
         return 'D+';
-      if($score>40&&$score<45)
-        return 'D+';
       if($score>29&&$score<40)
         return 'D';
-      if($score>-1&&$score<30)
+      if($score>-1&&$score<31)
         return 'F';
+     }
+
+     public function gradePoint($score)
+     {
+       if($score>79&&$score<100)
+        return 4;
+      if($score>69&&$score<80)
+        return 3.5;
+      if($score>59&&$score<70)
+        return 3;
+      if($score>55&&$score<60)
+        return 2.5;
+      if($score>49&&$score<55)
+        return 2;
+      if($score>44&&$score<49)
+        return 1.5;
+      if($score>40&&$score<45)
+        return 1;
+      if($score>-1&&$score<31)
+        return 0;
+     }
+
+     public function gpa($scores)
+     {
+      $total_credits = 0;
+      $sum_of_course_credits = 0;
+
+      foreach($scores as $score)
+      {
+        $total_credits += $score->course_cv;
+        $sum_of_course_credits += $score->course_cv * $this->gradePoint($score->final);
+      }
+
+      return $sum_of_course_credits/$total_credits;
+
      }
 }

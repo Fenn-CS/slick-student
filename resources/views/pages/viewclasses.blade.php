@@ -20,7 +20,7 @@
                 <tr>
                 <td>#</td>
                   <td>{{$class->name}}</td>
-                  <td>{{$class->program}}</td>
+                  <td>{{$class->program->name}}</td>
                   <td>{{$class->level}}</td>
                   <td>
                   <a class="actions"><i class="fa fa-edit"></i></a>
