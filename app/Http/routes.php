@@ -98,8 +98,8 @@ Route::post('/views/getscores', 'DashboardController@getScoresView');
 Route::post('/scores/addscore', 'ScoreController@addScore');
 Route::post('/scores/import', 'ScoreController@importScores');
 
-
-
+//GENERAL 4 ALL USERS
+Route::post('/password/update', 'UserController@updatePassword');
 
 
 

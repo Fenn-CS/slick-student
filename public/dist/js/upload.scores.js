@@ -59,11 +59,14 @@ function uploadScore(score,course, student_matricule, student_id, type, semester
       
       error:function(xhr, status, error) {
                //Error msg for Developers
-               $('body').html('');
-               $('body').prepend(xhr.responseText);
-               $('body').append('XHR :'+xhr);
-               $('body').append('STATUS :'+status);
-               $('body').append('ERROR :'+error);
+               // $('body').html('');
+               // $('body').prepend(xhr.responseText);
+               // $('body').append('XHR :'+xhr);
+               // $('body').append('STATUS :'+status);
+               // $('body').append('ERROR :'+error);
+                //Error msg for users
+               $('.infoMsg').html("OOPS SOMETHING BAD HAPPENED!");
+               $('#infoModal').modal();
              
               
               }

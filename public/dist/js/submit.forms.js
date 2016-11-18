@@ -89,6 +89,19 @@ var url = base+'/results/add';
 sendform(url, data, event);
 });
 
+$('body').on('click', '#reset-password', function(event){
+ event.preventDefault();
+ if($('#password-update1').val()==$('#password-update2').val()&&$('#password-update1').val()!=''){
+    var data= $('#form-reset-password').serialize();
+    var url = base+'/password/update';
+    sendform(url, data, event);
+ } else {
+   $('.infoMsg').html("Either passwords do not match or no password was typed. Please retype!");
+   $('#infoModal').modal();
+ }
+
+});
+
 $('body').on('change', '#classprogram', function(event){
 nameclass();
 });
@@ -128,6 +141,9 @@ function sendform(url,data, event){
                $('body').append('XHR :'+xhr);
                $('body').append('STATUS :'+status);
                $('body').append('ERROR :'+error);
+               // for users
+               // $('.infoMsg').html("OOPS SOMETHING BAD HAPPENED!");
+               // $('#infoModal').modal();
              
               
               }
