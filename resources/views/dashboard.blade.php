@@ -114,6 +114,7 @@
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
+
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
          <li class="treeview">
@@ -128,6 +129,7 @@
             <li><a  id="form-viewuserstatus"><i class="fa fa-circle-o"></i>Status</a></li>
           </ul>
         </li>
+        @if(Auth::user()->personality==='Admin')
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i> <span>Students</span>
@@ -152,6 +154,7 @@
             <li><a id="form-viewteachers"><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>
+        @endif
         <li class="treeview">
           <a href="#">
             <i class="fa fa-book"></i>
@@ -161,13 +164,16 @@
             </span>
           </a>
           <ul class="treeview-menu">
+          @if(Auth::user()->personality==='Admin')
             <li><a id="form-addcourse"><i class="fa fa-circle-o"></i>Add</a></li>
             <li><a id="form-viewcourses"><i class="fa fa-circle-o"></i>View</a></li>
             <li><a id="form-assigncourse"><i class="fa fa-circle-o"></i>Assign</a></li>
             <li><a id="form-viewcourseassigns"><i  class="fa fa-circle-o"></i>View Course Assigns</a></li>
+          @endif
             <li><a id="form-registercourses"><i class="fa fa-circle-o"></i>Registration</a></li>
           </ul>
         </li>
+        @if(Auth::user()->personality==='Admin')
         <li class="treeview">
           <a href="#">
             <i class="fa fa-institution"></i>
@@ -196,7 +202,7 @@
             <li><a id="form-viewclasses"><i class="fa fa-circle-o"></i>View</a></li>
           </ul>
         </li>
-       
+       @endif
         <li class="treeview">
           <a href="#">
             <i class="fa fa-envelope-o"></i> <span>Results</span>
@@ -205,12 +211,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
+          @if(Auth::user()->personality==='Admin'||Auth::user()->personality==='Teacher')
             <li><a id="form-addscoresprompt"><i class="fa fa-circle-o"></i>Add Scores</a></li>
             <li><a id="form-viewscoresprompt"><i class="fa fa-circle-o"></i>View Scores</a></li>
+          @endif
             <li><a id="form-viewresultsprompt"><i class="fa fa-circle-o"></i>My Results</a></li>
             <li><a ><i class="fa fa-circle-o"></i>Transcripts</a></li>
           </ul>
         </li>
+         @if(Auth::user()->personality==='Admin'||Auth::user()->personality==='Student')
           <li class="treeview">
           <a href="#">
             <i class="fa fa-money"></i> <span>Fees</span>
@@ -219,12 +228,16 @@
             </span>
           </a>
           <ul class="treeview-menu">
+          @if(Auth::user()->personality==='Admin')
             <li><a id="form-fee-operations"><i class="fa fa-circle-o"></i>Fee Operations</a></li>
             <li><a ><i class="fa fa-circle-o"></i>View Statistics</a></li>
+          @endif
             <li><a id="form-fee-pay"><i class="fa fa-circle-o"></i>Pay</a></li>
+            <li><a id="#"><i class="fa fa-circle-o"></i>Transaction Details</a></li>
           </ul>
         </li>
-
+        @endif
+      @if(Auth::user()->personality==='Admin')
         <li class="treeview">
           <a href="#">
             <i class="fa fa-ban"></i> <span>Restrictions</span>
@@ -275,6 +288,7 @@
         
           </ul>
         </li>
+        @endif
     
       </ul>
     </section>
