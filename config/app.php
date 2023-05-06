@@ -160,6 +160,10 @@ return [
          */
         Zizaco\Entrust\EntrustServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        /*
+         * Laravel Tinker...
+         */
+        Laravel\Tinker\TinkerServiceProvider::class,
 
     ],
 

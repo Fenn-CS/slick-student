@@ -1,8 +1,5 @@
 <?php
-use App\Role;
-use App\Permission;
 use App\User;
-use App\Department;
 use App\Program;
 use App\Course;
 use App\ProgramClass;
@@ -19,6 +16,9 @@ use App\ProgramClass;
 */
 
 Route::get('/', function () {
+	if(Auth::check()) {
+		return redirect('/dashboard');
+	}
     return view('welcome');
 });
 
