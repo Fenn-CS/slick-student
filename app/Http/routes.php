@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::auth();
+Route::post('/login', 'Auth\LoginController@authenticate');
 
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'DashboardController@dashboard');
